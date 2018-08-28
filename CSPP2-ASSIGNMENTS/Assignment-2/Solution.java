@@ -40,7 +40,6 @@ public final class Solution {
      * @param      b     { parameter_description }
      * @param      c     { parameter_description }
      *
-     * @return     { It returns the roots of the equation }
      */
     public static void roots(final int a, final int b, final int c) {
         double result = -b + Math.sqrt((b * b) - (x() * a * c));
@@ -58,4 +57,4 @@ public final class Solution {
     public static double x() {
         return CONSTANT;
     }
-}
+} 
