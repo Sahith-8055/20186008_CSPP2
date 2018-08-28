@@ -7,7 +7,7 @@ import java.util.Scanner;
 /**
  * Class for solution.
  */
-public class Solution {
+public final class Solution {
     /**
      * {It is the constant used in the calculation of roots}.
      */
@@ -43,10 +43,19 @@ public class Solution {
      * @return     { description_of_the_return_value }
      */
     public static void rootsOfQuadraticEquation(final int a, final int b, final int c) {
-        double result = -b + Math.sqrt((b * b) - (4 * a * c));
+        double result = -b + Math.sqrt((b * b) - (x() * a * c));
         result /= (2 * a);
-        double result1 = -b - Math.sqrt((b * b) - (4 * a * c));
+        double result1 = -b - Math.sqrt((b * b) - (x() * a * c));
         result1 /= (2 * a);
         System.out.println(result + " " + result1);
+    }
+
+    /**
+     * { Function to give the constant value }.
+     *
+     * @return     { description_of_the_return_value }
+     */
+    public static double x() {
+        return CONSTANT;
     }
 }
