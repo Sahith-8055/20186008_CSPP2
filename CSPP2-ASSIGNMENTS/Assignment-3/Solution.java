@@ -39,9 +39,10 @@ public final class Solution {
         if (base == 0) {
             return 0;
         } else if (exponent == 1) {
-            return 1;
+            return base;
         } else {
             return base * (power(base, exponent - 1));
         }
     }
 }
+
