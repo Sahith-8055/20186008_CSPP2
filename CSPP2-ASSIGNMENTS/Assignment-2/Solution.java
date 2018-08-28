@@ -3,13 +3,25 @@ import java.util.Scanner;
 /**
  * Class for solution.
  */
+
+/**
+ * Class for solution.
+ */
 public class Solution {
-    /*
-    Do not modify this main function.
-    */
+    /**
+     * {It is the constant used in the calculation of roots}.
+     */
+    private static final double CONSTANT = 4;
 
     /**
-     * { function_description }
+     * Constructs the object.
+     */
+    private Solution() {
+        // Empty Constructor
+    }
+
+    /**
+     * { It is the main function }.
      *
      * @param      args  The arguments
      */
@@ -22,7 +34,7 @@ public class Solution {
     }
 
     /**
-     * { function_description }
+     * { It is the method for finding the roots }.
      *
      * @param      a     { parameter_description }
      * @param      b     { parameter_description }
@@ -30,7 +42,7 @@ public class Solution {
      *
      * @return     { description_of_the_return_value }
      */
-    public static void rootsOfQuadraticEquation(int a, int b, int c) {
+    public static void rootsOfQuadraticEquation(final int a, final int b, final int c) {
         double result = -b + Math.sqrt((b * b) - (4 * a * c));
         result /= (2 * a);
         double result1 = -b - Math.sqrt((b * b) - (4 * a * c));
