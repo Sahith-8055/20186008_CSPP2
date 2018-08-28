@@ -30,7 +30,7 @@ public final class Solution {
         int a = scan.nextInt();
         int b = scan.nextInt();
         int c = scan.nextInt();
-        rootsOfQuadraticEquation(a, b, c);
+        roots(a, b, c);
     }
 
     /**
@@ -40,9 +40,9 @@ public final class Solution {
      * @param      b     { parameter_description }
      * @param      c     { parameter_description }
      *
-     * @return     { description_of_the_return_value }
+     * @return     { It returns the roots of the equation }
      */
-    public static void rootsOfQuadraticEquation(final int a, final int b, final int c) {
+    public static void roots(final int a, final int b, final int c) {
         double result = -b + Math.sqrt((b * b) - (x() * a * c));
         result /= (2 * a);
         double result1 = -b - Math.sqrt((b * b) - (x() * a * c));
