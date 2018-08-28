@@ -36,7 +36,7 @@ public final class Solution {
      * @return     { It returns the value }.
      */
     public static long power(final int base, final int exponent) {
-        if (exponent == 0) {
+        if (base == 0) {
             return 0;
         } else if (exponent == 1) {
             return 1;
