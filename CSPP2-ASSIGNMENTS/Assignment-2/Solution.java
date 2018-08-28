@@ -57,4 +57,4 @@ public final class Solution {
     public static double x() {
         return CONSTANT;
     }
-} 
+}
