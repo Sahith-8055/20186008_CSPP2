@@ -30,6 +30,12 @@ public final class Solution {
         }
         for (int k = 1; k < n; k++) {
             int k1 = k / divisor;
+            while (k1 > 0) {
+            if (k1 % divisor == remainder) {
+                count1 += 1;
+            }
+                k1 = k1 / divisor;
+        }
             if (k1 == remainder) {
                 count2 += 1;
             }
@@ -38,4 +44,5 @@ public final class Solution {
         System.out.println(count);
     }
 }
+
 
