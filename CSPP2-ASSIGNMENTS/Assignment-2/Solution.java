@@ -4,9 +4,6 @@ import java.util.Scanner;
  * Class for solution.
  */
 
-/**
- * Class for solution.
- */
 public final class Solution {
     /**
      * {It is the constant used in the calculation of roots}.
@@ -58,3 +55,4 @@ public final class Solution {
         return CONSTANT;
     }
 }
+
