@@ -36,7 +36,7 @@ public class Solution {
 				for (int l = 0; l < m2-1; l++) {
 					System.out.print(sum[k][l] + " ");
 				}
-				System.out.print(sum[k][m2-1]);
+				System.out.println(sum[k][m2-1]);
 			}
 		}
 	}
