@@ -33,13 +33,15 @@ public final class Solution {
     public static long binaryToDecimal(final String s) {
         int base = 2;
         int sum = 0;
-        int k = s.length() - 1;
+        int k = 0;
         for (int i = s.length() - 1; i >= 0; i--) {
             if (s.charAt(i) == '0') {
-                k = k - 1;
+                k = k + 1;
+                System.out.println(k);
             } else {
                 sum += Math.pow(base, k);
-                k = k - 1;
+                k = k + 1;
+                System.out.println(sum);
             }
         }
         return sum;
