@@ -37,11 +37,9 @@ public final class Solution {
         for (int i = s.length() - 1; i >= 0; i--) {
             if (s.charAt(i) == '0') {
                 k = k + 1;
-                System.out.println(k);
             } else {
                 sum += Math.pow(base, k);
                 k = k + 1;
-                System.out.println(sum);
             }
         }
         return sum;
