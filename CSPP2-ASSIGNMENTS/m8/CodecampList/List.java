@@ -70,7 +70,8 @@ public class List {
         // How many items do we have in the list when you create it?
         // An empty list has how many items?
         // That is the initial value to use for size.
-        this.list = new int[10];
+        final int number = 10;
+        this.list = new int[number];
         this.size1 = 0;
 
     }
@@ -214,7 +215,7 @@ public class List {
         return -1;
     }
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         // create an object of the list to invoke methods on it
         List l = new List();
 
@@ -257,6 +258,8 @@ public class List {
             case "contains":
                 System.out.println(l.contains(Integer.parseInt(tokens[1])));
                 break;
+            default:
+            	break;    
             }
         }
     }
