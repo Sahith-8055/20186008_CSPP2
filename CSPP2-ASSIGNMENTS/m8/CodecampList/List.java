@@ -27,6 +27,9 @@ public class List {
      * This is a hard concept to understand. Discuss with your mentor.
      *
     */
+    /**
+     * { var_description }.
+     */
     private int[] list;
     // declare a private int[]
     // don't create the array yet using new
@@ -100,7 +103,7 @@ public class List {
      *
      * @param      item  The item.
      */
-    public void add(int item) {
+    public void add(final int item) {
         //Inserts the specified element at the end of the list.
         if (size1 < list.length) {
             list[size1] = item;
@@ -150,7 +153,7 @@ public class List {
      *
      * @param      index  The index.
      */
-    public void remove(int index) {
+    public void remove(final int index) {
         // Think about what to do to the size variable.
         if (index >= 0 && index < size1) {
             for (int i = index; i < size1 - 1; i++) {
@@ -180,7 +183,7 @@ public class List {
      *
      * @return     { description_of_the_return_value }
      */
-    public int get(int index) {
+    public int get(final int index) {
         // Replace the code below to write the code for get
         return list[index];
     }
@@ -233,7 +236,7 @@ public class List {
      *
      * @return     { description_of_the_return_value }.
      */
-    public boolean contains(int item) {
+    public boolean contains(final int item) {
         // for (int element : list) {
         //     if (element == item) {
         //         return true;
@@ -255,7 +258,7 @@ public class List {
      *
      * @return     { description_of_the_return_value }.
      */
-    public int indexOf(int item) {
+    public int indexOf(final int item) {
         for (int i = 0; i < size1; i++) {
             if (list[i] == item) {
                 return i;
