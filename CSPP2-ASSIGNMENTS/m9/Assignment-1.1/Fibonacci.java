@@ -29,10 +29,10 @@ public class Fibonacci {
         List list1 = new List();
         int num1 = 0, num2 = 1;
         for (int i = 0; i <= n; ++i) {
+            list1.add(num1);
             int finalNum = num1 + num2;
             num1 = num2;
             num2 = finalNum;
-            list1.add(finalNum);
          }
         return list1;
     }
