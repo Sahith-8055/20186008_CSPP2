@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 /*
  * In the previous module you have created List ADT.
  * ADTs are developed as reusable libraries
@@ -16,8 +15,16 @@ import java.util.Scanner;
  * by invoking the add method provided in the List ADT.
  *
  */
-
+/**
+ * Class for fibonacci.
+ */
 public class Fibonacci {
+    /**
+     * Constructs the object.
+     */
+    private Fibonacci() {
+        //Empty.
+    }
     /*
      * fib is a static method takes a argument n
      * n is the count of the fibonacci numbers to be generated.
@@ -25,7 +32,14 @@ public class Fibonacci {
      *
      * Look for the hint.txt if some of the testcases fail.
      */
-    public static List fib(int n) {
+    /**
+     * { function_description }.
+     *
+     * @param      n     { parameter_description }.
+     *
+     * @return     { List of fibonacci numbers }.
+     */
+    public static List fib(final int n) {
         List list1 = new List(n);
         int num1 = 0, num2 = 1;
         for (int i = 0; i < n; i++) {
@@ -36,8 +50,12 @@ public class Fibonacci {
          }
         return list1;
     }
-
-	public static void main(String[] args) {
+    /**
+     * { function_description }.
+     *
+     * @param      args  The arguments
+     */
+    public static void main(final String[] args) {
         Scanner s = new Scanner(System.in);
         int n = s.nextInt();
         System.out.println(fib(n));
