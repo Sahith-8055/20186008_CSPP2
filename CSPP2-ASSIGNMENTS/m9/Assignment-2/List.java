@@ -1,6 +1,10 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
 import java.util.Arrays;
+/**
+ * Class List.
+ * @author Sahith.
+ */
 public class List {
 	//Implement all the methods mentioned to build a ListADT
 
@@ -62,7 +66,9 @@ public class List {
      */
     
     
-
+    /**
+     * Constructs the object.
+     */
     public List() {
 
         // what are the two variables to be initialized here?
@@ -93,6 +99,11 @@ public class List {
      * constructor.
      * 
      */
+    /**
+     * Constructs the object.
+     *
+     * @param      capacity  The capacity
+     */
     public List(int capacity) {
         size = 0;
         list = new int[capacity];
@@ -108,6 +119,11 @@ public class List {
      * to the list.
      * 
      * The method returns void (nothing)
+     */
+    /**
+     * { function_description }.
+     *
+     * @param      item  The item
      */
     public void add(int item) {
         //Inserts the specified element at the end of the list.
@@ -148,6 +164,11 @@ public class List {
      * You know enough of Object Oriented Programming to answer these questions :-)
      *
      */
+    /**
+     * { function_description }.
+     *
+     * @param      item  The item
+     */
     public void resize(int item) {
         list = Arrays.copyOf(list, list.length * 2);
         list[size++] = item;
@@ -160,6 +181,11 @@ public class List {
      * to the objects outside the list
      * 
      * The method returns an int. Empty list should return 0.
+     */
+    /**
+     * { function_description }.
+     *
+     * @return     { description_of_the_return_value }
      */
     public int size() {
         return size;
@@ -185,7 +211,11 @@ public class List {
      * array = [1,3,0,0,0,0,0,0,0,0]
      * The method returns void (nothing)
      */
-
+    /**
+     * { function_description }.
+     *
+     * @param      index  The index
+     */
     public void remove(int index) {
         // write the logic for remove here.
         // Think about what to do to the size variable.
@@ -209,6 +239,13 @@ public class List {
      * in the list then that would mean the item doesn't exist.
      * How do we check if the position is greater than the 
      * number of items in the list? Would size variable be useful?
+     */
+    /**
+     * { function_description }.
+     *
+     * @param      index  The index
+     *
+     * @return     { description_of_the_return_value }
      */
     public int get(int index) {
         if(index < 0 || index >= size) {
@@ -238,6 +275,11 @@ public class List {
      * not all the elements of the array.
      *
      */
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
         if(size == 0)
             return "";
@@ -256,6 +298,13 @@ public class List {
      * So, iterate through the list and return true if
      * the item exists and otherwise false
      */
+    /**
+     * { function_description }.
+     *
+     * @param      item  The item
+     *
+     * @return     { description_of_the_return_value }
+     */
     public boolean contains(int item) {
         return indexOf(item) == -1;
     }
@@ -265,6 +314,13 @@ public class List {
      * of the specified element in this list,
      * or -1 if this list does not contain the element.
      */
+    /**
+     * Searches for the first match.
+     *
+     * @param      item  The item
+     *
+     * @return     { description_of_the_return_value }
+     */
     public int indexOf(int item) {
         for(int i = 0; i < size; i++) {
             if(item == list[i])
@@ -272,7 +328,11 @@ public class List {
         }
         return -1;
     }
-
+    /**
+     * { function_description }.
+     *
+     * @param      args  The arguments
+     */
 	public static void main(String[] args) {
         // create an object of the list to invoke methods on it
         List l = new List();
