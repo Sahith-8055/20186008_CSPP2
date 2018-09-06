@@ -42,9 +42,6 @@ public class StringList implements StringListInterface {
     // declare a private String[]
     // don't create the array yet using new
     // that's the job of the List constructor
-    /**
-     * Declaring a String Array.
-     */
     private String[] list;
 
     /*
@@ -131,12 +128,18 @@ public class StringList implements StringListInterface {
      * The method returns void (nothing)
      */
     public void add(final String item) {
+        if (size > list.length) {
+            resize();
+        }
         list[size++] = item;
     }
     /*Inserts all the elements of specified int 
     array to the end of list*/
    
     public void addAll(final String[] items) {
+		if (size + items.length >= list.length) {
+            resize();
+        }
         for (int i = 0; i < items.length; i++) {
             add(items[i]);
         }
@@ -261,5 +264,8 @@ public class StringList implements StringListInterface {
             }
         }
         return -1;
+    }
+    private void resize() {
+        list = Arrays.copyOf(list, 2 * list.length);
     }
 }
