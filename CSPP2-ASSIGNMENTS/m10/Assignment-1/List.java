@@ -32,6 +32,9 @@ public final class List {
     // declare a private int[]
     // don't create the array yet using new
     // that's the job of the List constructor
+    /**
+     * Integer Array declaration.
+     */
     private int[] list;
 
     /*
@@ -57,6 +60,9 @@ public final class List {
     // declare a private int size
     // again, don't initialize it here
     // variable initialization should be done in the constructor
+    /**
+     * Variable Size.
+     */
     private int size;
 
     /*
@@ -73,7 +79,8 @@ public final class List {
         // What should be the default values?
         // In the case of the list, it should be empty but
         // it should be initialized with an array size like 10
-        list = new int[10];
+        final int number = 10;
+        list = new int[number];
 
         // Think about the initial value for size.
         // How many items do we have in the list when you create it?
@@ -148,7 +155,7 @@ public final class List {
      * with the contents of the original array.
      *
      * TODO
-     * Create a method called resize(). 
+     * Create a method called resize().
      * Resize should create an new array that is
      * double the size of the old array.
      * Then copy the contents of the old array to the new one.
@@ -157,7 +164,7 @@ public final class List {
      * Will the client invoke resize or is it internal to List class?
      * Should the resize be public method or private?
      * Should the resize method return any values?
-     * You know enough of Object Oriented Programming 
+     * You know enough of Object Oriented Programming
      * to answer these questions :-)
      */
 
@@ -319,17 +326,20 @@ public final class List {
      */
     public int indexOf(final int item) {
         for (int i = 0; i < size; i++) {
-            if (item == list[i])
+            if (item == list[i]) {
                 return i;
+            }
         }
         return -1;
     }
-   /*Inserts all the elements of specified int 
+   /*Inserts all the elements of specified int
     array to the end of list*/
     /**
-     * { item_description }.
+     * Adds all.
+     *
+     * @param      items  The items
      */
-    public void addAll(final int items[]) {
+    public void addAll(final int[] items) {
         if (size + items.length >= list.length) {
             resize();
         }
@@ -339,7 +349,7 @@ public final class List {
     }
 
      /*
-        Inserts the specified element at the specified index 
+        Inserts the specified element at the specified index
     by moving all the elements to the right.
         The method returns void (nothing)
      */
@@ -362,7 +372,6 @@ public final class List {
             System.out.println("[0]");
         }
     }
-    
     /* Returns the count of occurances of a given item in the list*/
     /**
      * { function_description }.
@@ -371,7 +380,7 @@ public final class List {
      *
      * @return     { description_of_the_return_value }
      */
-    public int count(int item) {
+    public int count(final int item) {
         int flag = 0;
         for (int element : list) {
             if (element == item) {
@@ -401,8 +410,8 @@ public final class List {
             // based on the list operation invoke the corresponding method
             switch (tokens[0]) {
                case "add":
-                if ((tokens.length) == 2){
-                String[] t = tokens[1].split(",");
+                if ((tokens.length) == 2) {
+                    String[] t = tokens[1].split(",");
                 if (t.length == 1) {
                     l.add(Integer.parseInt(tokens[1]));
                 }
@@ -410,7 +419,7 @@ public final class List {
                     if (t.length > 1) {
                         l.add(Integer.parseInt(t[0]), Integer.parseInt(t[1]));
                     }
-                    }
+                }
                 }
                 break;
                 case "count":
@@ -420,7 +429,7 @@ public final class List {
                 if (tokens.length == 2) {
                 String[] t1 = tokens[1].split(",");
                 int[] temp = new int[t1.length];
-                for(int i = 0; i < temp.length; i++) {
+                for (int i = 0; i < temp.length; i++) {
                     temp[i] = Integer.parseInt(t1[i]);
                 }
                 l.addAll(temp);
