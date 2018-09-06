@@ -321,7 +321,7 @@ public final class Solution {
                         System.out.println(listDouble.size());
                         break;
                         case "print":
-                        // print the list 
+                        // print the list
                         // (implement toString in StringList class)
                         // expected format is [item-1,item-2,...,item-n]
                         // review the output testcase file
