@@ -331,14 +331,16 @@ public final class Solution {
                 }
             break;
 
-            case "O"://This case will be executed for Student type list i.e to store List of Student Objects
+            case "O":
+            //This case will be executed for Student type list 
+            //i.e to store List of Student Objects
                 List<Student> listStudent = new List();
                 while (stdin.hasNext()) {
                     // read the line
                     String line = stdin.nextLine();
-                    // split the line using space
+                    // split the line
                     String[] tokens = line.split(" ");
-                    // based on the list operation invoke the corresponding method
+                    // based on list operation invoke the corresponding method
                     switch (tokens[0]) {
                         case "add":
                             listStudent.add(new Student(tokens[1]));
@@ -370,14 +372,18 @@ public final class Solution {
                         listStudent.remove(Integer.parseInt(tokens[1]));
                         break;
                         case "indexOf":
-                        System.out.println(listStudent.indexOf(new Student(tokens[1])));
+                        System.out.println(listStudent.
+                            indexOf(new Student(tokens[1])));
                         break;
                         case "get":
-                        System.out.println(listStudent.get(Integer.parseInt(tokens[1])));
+                        System.out.println(listStudent.
+                            get(Integer.parseInt(tokens[1])));
                         break;
                         case "contains":
-                        System.out.println(listStudent.contains(new Student(tokens[1])));
+                        System.out.println(listStudent.
+                            contains(new Student(tokens[1])));
                         break;
+                        default:
                     }
                 }
                 break;
