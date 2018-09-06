@@ -348,7 +348,7 @@ public class List {
      * @param      item   The item
      */
     public void add(int index,int item) {
-        if (index >= 0 && size <= list.length && index < size) {
+        if (index >= 0) {
             for (int i = size; i >= index; i--) {
                 list[i + 1] = list[i];
             }
