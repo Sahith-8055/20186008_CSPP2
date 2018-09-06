@@ -63,8 +63,6 @@ public final class List {
      * The purpose of the constructor is to initialize the
      * class variables with some default values.
      */
-    
-    
     /**
      * Constructs the object.
      */
@@ -127,7 +125,7 @@ public final class List {
         //Inserts the specified element at the end of the zelist.
         if (size > list.length) {
             resize();
-        } 
+        }
         list[size++] = item;
     }
 
@@ -320,8 +318,8 @@ public final class List {
      * @return     { description_of_the_return_value }
      */
     public int indexOf(final int item) {
-        for(int i = 0; i < size; i++) {
-            if(item == list[i])
+        for (int i = 0; i < size; i++) {
+            if (item == list[i])
                 return i;
         }
         return -1;
@@ -331,7 +329,7 @@ public final class List {
     /**
      * { item_description }.
      */
-    public void addAll(int items[]) {
+    public void addAll(final int items[]) {
         if (size + items.length >= list.length) {
             resize();
         }
@@ -351,7 +349,7 @@ public final class List {
      * @param      index  The index
      * @param      item   The item
      */
-    public void add(int index,int item) {
+    public void add(final int index, final int item) {
         if (index >= 0) {
             for (int i = size; i >= index; i--) {
                 list[i + 1] = list[i];
@@ -452,6 +450,7 @@ public final class List {
                 case "contains":
                 System.out.println(l.contains(Integer.parseInt(tokens[1])));
                 break;
+                default:
             }
         }
     }
