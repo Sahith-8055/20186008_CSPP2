@@ -1,19 +1,43 @@
+/**
+ * @author Sahith.
+ */
 import java.io.BufferedInputStream;
 import java.util.Scanner;
 //A Class is implemented for Student details
+/**
+ * Class for student.
+ */
 class Student {
+	/**
+	 * {name variable}.
+	 */
 	private String name;
-	
-	public Student(String name) {//A constructor used to initialize the instance variables
+	/**
+	 * Constructs the object.
+	 *
+	 * @param      name  The name
+	 */
+	public Student(final String name) {//A constructor used to initialize the instance variables
 		this.name = name;
 	}
-
+	/**
+	 * Gets the name.
+	 *
+	 * @return     The name.
+	 */
 	public String getName() {//Getter method which returns the value of instance variable
 		return this.name;
 	}
 
+	/**
+	 * {check if two students names are equal or not}.
+	 *
+	 * @param      other  The other
+	 *
+	 * @return     {boolean}
+	 */
 	@Override
-	public boolean equals(Object other) { //This method is to check if two students names are equal or not
+	public boolean equals(final Object other) {
 		if (!(other instanceof Student)) {
 			return false;
 		}
@@ -21,23 +45,32 @@ class Student {
 		Student that = (Student) other;
 		return this.getName().equals(that.getName());
 	}
-
+	/**
+	 * Returns a string representation of the object.
+	 *
+	 * @return     String representation of the object.
+	 */
 	public String toString() {
 		return this.name;
 	}
 }
-
+/**
+ * Class for solution.
+ */
 public class Solution {
-	
-
-	public static void main(String[] args) {
+	/**
+	 * {Main function}.
+	 *
+	 * @param      args  The arguments
+	 */
+	public static void main(final String[] args) {
         // create an object of the list to invoke methods on it
         Scanner stdin = new Scanner(new BufferedInputStream(System.in));
         String objectType = stdin.nextLine();
 
         switch(objectType) {
         	case "S"://This case will be executed for String type list
-        		List<String> listString = new List();
+        		List<String > listString = new List();
 		        while (stdin.hasNext()) {
 		            // read the line
 		            String line = stdin.nextLine();
@@ -49,7 +82,7 @@ public class Solution {
 			                listString.add(tokens[1]);
 		                break;
 		                case "addAll":
-		                if(tokens.length==2){
+		                if(tokens.length == 2){
 		                String[] t1 = tokens[1].split(",");
 		                listString.addAll(t1);
 		                }
@@ -84,7 +117,7 @@ public class Solution {
 	        break;
 
 	        case "I"://This case will be executed for Integer type list
-	            List<Integer> listInteger = new List();
+	            List<Integer > listInteger = new List();
 	       		while (stdin.hasNext()) {
 		            // read the line
 		            String line = stdin.nextLine();
@@ -96,11 +129,11 @@ public class Solution {
 			                listInteger.add(Integer.parseInt(tokens[1]));
 		                break;
 		                case "addAll":
-		                if(tokens.length==2){
-		                String[] t1 = tokens[1].split(",");
-		                Integer[] temp = new Integer[t1.length];
-		                for (int i = 0;i < temp.length; i++ ) {
-		                	temp[i] = Integer.parseInt(t1[i]);
+		                if(tokens.length == 2) {
+		                	String[] t1 = tokens[1].split(",");
+		                	Integer[] temp = new Integer[t1.length];
+		                	for (int i = 0; i < temp.length; i++) {
+		                		temp[i] = Integer.parseInt(t1[i]);
 		                }
 		                listInteger.addAll(temp);
 		                }
@@ -147,11 +180,11 @@ public class Solution {
 			                listFloat.add(Float.parseFloat(tokens[1]));
 		                break;
 		                case "addAll":
-		                if(tokens.length==2){
-		                String[] t1 = tokens[1].split(",");
-		                Float temp[] = new Float[t1.length];
-		                for (int i = 0; i < t1.length ;i++ ) {
-		                	temp[i] = Float.parseFloat(t1[i]);
+		                if(tokens.length == 2) {
+		                	String[] t1 = tokens[1].split(",");
+		                	Float[] temp = new Float[t1.length];
+		                	for (int i = 0; i < t1.length ;i++ ) {
+		                		temp[i] = Float.parseFloat(t1[i]);
 		                }
 		                listFloat.addAll(temp);
 		                }
@@ -198,7 +231,7 @@ public class Solution {
 			                listCharacter.add(tokens[1].charAt(0));
 		                break;
 		                case "addAll":
-		                if(tokens.length==2){
+		                if(tokens.length == 2) {
 		                String[] t1 = tokens[1].split(",");
 		                Character[] temp = new Character[t1.length];
 		                for (int i = 0; i < t1.length ;i++ ) {
@@ -249,11 +282,11 @@ public class Solution {
 			                listDouble.add(Double.parseDouble(tokens[1]));
 		                break;
 		                case "addAll":
-		                if(tokens.length==2){
-		                String[] t1 = tokens[1].split(",");
-		                Double[] temp = new Double[t1.length];
-		                for (int i = 0; i < t1.length ;i++ ) {
-		                	temp[i] = Double.parseDouble(t1[i]);
+		                if(tokens.length == 2) {
+		                	String[] t1 = tokens[1].split(",");
+		                	Double[] temp = new Double[t1.length];
+		                	for (int i = 0; i < t1.length ;i++ ) {
+		                		temp[i] = Double.parseDouble(t1[i]);
 		                }
 		                listDouble.addAll(temp);
 		                }
@@ -300,11 +333,11 @@ public class Solution {
 			                listStudent.add(new Student(tokens[1]));
 		                break;
 		                case "addAll":
-		                if(tokens.length==2){
-		                String[] t1 = tokens[1].split(",");
-		                Student[] temp = new Student[t1.length];
-		                for (int i = 0; i < t1.length ;i++ ) {
-		                	temp[i] = new Student(t1[i]);
+		                if(tokens.length == 2){
+		                	String[] t1 = tokens[1].split(",");
+		                	Student[] temp = new Student[t1.length];
+		                	for (int i = 0; i < t1.length ;i++ ) {
+		                		temp[i] = new Student(t1[i]);
 		                }
 		                listStudent.addAll(temp);
 		                }
