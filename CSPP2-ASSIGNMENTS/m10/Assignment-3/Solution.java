@@ -31,7 +31,7 @@ class Student {
     /**
      * {Hashcode method}.
      *
-     * @return     { description_of_the_return_value }
+     * @return     { Zero }
      */
     public int hashCode() {
         return 0;
