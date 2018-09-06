@@ -188,7 +188,7 @@ public final class Solution {
                     String line = stdin.nextLine();
                     // split the line using space
                     String[] tokens = line.split(" ");
-                    // based on the list operation invoke the corresponding method
+                    // based on list operation invoke the corresponding method
                     switch (tokens[0]) {
                         case "add":
                             listFloat.add(Float.parseFloat(tokens[1]));
@@ -220,13 +220,16 @@ public final class Solution {
                         listFloat.remove(Integer.parseInt(tokens[1]));
                         break;
                         case "indexOf":
-                        System.out.println(listFloat.indexOf(Float.parseFloat(tokens[1])));
+                        System.out.println(listFloat.
+                            indexOf(Float.parseFloat(tokens[1])));
                         break;
                         case "get":
-                        System.out.println(listFloat.get(Integer.parseInt(tokens[1])));
+                        System.out.println(listFloat.
+                            get(Integer.parseInt(tokens[1])));
                         break;
                         case "contains":
-                        System.out.println(listFloat.contains(Float.parseFloat(tokens[1])));
+                        System.out.println(listFloat.
+                            contains(Float.parseFloat(tokens[1])));
                         break;
                         default:
                     }
@@ -240,7 +243,7 @@ public final class Solution {
                     String line = stdin.nextLine();
                     // split the line using space
                     String[] tokens = line.split(" ");
-                    // based on the list operation invoke the corresponding method
+                    // based on list operation invoke the corresponding method
                     switch (tokens[0]) {
                         case "add":
                             listCharacter.add(tokens[1].charAt(0));
