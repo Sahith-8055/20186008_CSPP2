@@ -129,7 +129,7 @@ public class List {
         //Inserts the specified element at the end of the zelist.
         if (size > list.length) {
             resize();
-        } list[size++] = item;   
+        } list[size++] = item;
     }
 
     /*
@@ -175,7 +175,7 @@ public class List {
      * The method returns an int. Empty list should return 0.
      */
     /**
-     * 
+     *
      *
      * @return     { description_of_the_return_value }
      */
@@ -229,7 +229,7 @@ public class List {
      * How can an element not be there at a given position?
      * Well, if the position is greater than the number of items
      * in the list then that would mean the item doesn't exist.
-     * How do we check if the position is greater than the 
+     * How do we check if the position is greater than the
      * number of items in the list? Would size variable be useful?
      */
     /**
