@@ -28,7 +28,14 @@ class Student {
     public String getName() {
         return this.name;
     }
-
+    /**
+     * { function_description }.
+     *
+     * @return     { description_of_the_return_value }
+     */
+    public int hashCode() {
+        return 0;
+    }
     /**
      * {check if two students names are equal or not}.
      *
