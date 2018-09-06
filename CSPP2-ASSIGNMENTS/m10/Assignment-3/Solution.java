@@ -17,8 +17,8 @@ class Student {
      * A constructor used to initialize the instance variables
      * @param      name  The name
      */
-    Student(final String name) {
-        this.name = name;
+    Student(final String name1) {
+        this.name = name1;
     }
     /**
      * Gets the name.
@@ -408,4 +408,3 @@ public final class Solution {
         }
     }
 }
-
