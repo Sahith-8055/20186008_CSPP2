@@ -281,6 +281,9 @@ public class List {
             str = str + list[i] + ",";
         }
         str = str + list[i] + "]";
+        if (size == 1 && list[0] == 0) {
+            str += "\nInvalid Position Exception";
+        }
         return str;
     }
     
