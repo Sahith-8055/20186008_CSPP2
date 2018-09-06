@@ -57,7 +57,7 @@ class Student {
 /**
  * Class for solution.
  */
-public class Solution {
+public final class Solution {
     /**
      * Constructs the object.
      */
@@ -315,14 +315,18 @@ public class Solution {
                         listDouble.remove(Integer.parseInt(tokens[1]));
                         break;
                         case "indexOf":
-                        System.out.println(listDouble.indexOf(Double.parseDouble(tokens[1])));
+                        System.out.println(listDouble.
+                            indexOf(Double.parseDouble(tokens[1])));
                         break;
                         case "get":
-                        System.out.println(listDouble.get(Integer.parseInt(tokens[1])));
+                        System.out.println(listDouble.
+                            get(Integer.parseInt(tokens[1])));
                         break;
                         case "contains":
-                        System.out.println(listDouble.contains(Double.parseDouble(tokens[1])));
+                        System.out.println(listDouble.
+                            contains(Double.parseDouble(tokens[1])));
                         break;
+                        default:
                     }
                 }
             break;
