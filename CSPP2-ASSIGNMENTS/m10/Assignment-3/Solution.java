@@ -124,7 +124,7 @@ public class Solution {
             break;
 
             case "I"://This case will be executed for Integer type list
-                List<Integer > listInteger = new List();
+                List<Integer> listInteger = new List();
                 while (stdin.hasNext()) {
                     // read the line
                     String line = stdin.nextLine();
@@ -190,7 +190,7 @@ public class Solution {
                         if (tokens.length == 2) {
                             String[] t1 = tokens[1].split(",");
                             Float[] temp = new Float[t1.length];
-                            for (int i = 0; i < t1.length ;i++ ) {
+                            for (int i = 0; i < t1.length ; i++) {
                                 temp[i] = Float.parseFloat(t1[i]);
                         }
                         listFloat.addAll(temp);
@@ -241,7 +241,7 @@ public class Solution {
                         if (tokens.length == 2) {
                             String[] t1 = tokens[1].split(",");
                             Character[] temp = new Character[t1.length];
-                            for (int i = 0; i < t1.length ;i++ ) {
+                            for (int i = 0; i < t1.length ; i++) {
                                 temp[i] = t1[i].charAt(0);
                         }
                         listCharacter.addAll(temp);
@@ -292,7 +292,7 @@ public class Solution {
                         if (tokens.length == 2) {
                             String[] t1 = tokens[1].split(",");
                             Double[] temp = new Double[t1.length];
-                            for (int i = 0; i < t1.length ;i++ ) {
+                            for (int i = 0; i < t1.length; i++) {
                                 temp[i] = Double.parseDouble(t1[i]);
                         }
                         listDouble.addAll(temp);
