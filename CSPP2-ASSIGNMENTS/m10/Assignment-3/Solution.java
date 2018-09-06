@@ -71,6 +71,12 @@ public final class Solution {
     private Solution() {
         //Empty.
     }
+
+    /**
+     * {Executing ListString Method}.
+     *
+     * @param      stdin  The stdin
+     */
     public static void executeListString(final Scanner stdin) {
         List<String> listString = new List();
         while (stdin.hasNext()) {
