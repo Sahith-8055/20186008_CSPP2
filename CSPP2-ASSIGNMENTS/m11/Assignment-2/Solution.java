@@ -293,7 +293,8 @@ public final class Solution {
                 break;
                 case "indexOf":
                     if (tokens.length == 2) {
-                        System.out.println(l.indexOf(Float.parseFloat(tokens[1])));
+                        System.out.println(l.indexOf
+                            (Float.parseFloat(tokens[1])));
                     }
                 break;
                 case "get":
@@ -303,7 +304,8 @@ public final class Solution {
                 break;
                 case "contains":
                     if (tokens.length == 2) {
-                        System.out.println(l.contains(Float.parseFloat(tokens[1])));
+                        System.out.println(l.contains
+                            (Float.parseFloat(tokens[1])));
                     }
                 break;
                 case "addAll":
