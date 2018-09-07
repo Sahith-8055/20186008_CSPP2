@@ -89,8 +89,12 @@ public final class List {
         size = 0;
 
     }
-
-    public List(int capacity) {
+    /**
+     * Constructs the object.
+     *
+     * @param      capacity  The capacity
+     */
+    public List(final int capacity) {
         list = new int[capacity];
         size = 0;
     }
@@ -313,8 +317,8 @@ public final class List {
      * @return     {subList}.
      */
     public List subList(final int start, final int end) {
-        if (start >= 0 && start < size && 
-            end <= size && end >= 0 && start <=end) {
+        if (start >= 0 && start < size
+            && end <= size && end >= 0 && start <= end) {
             List list1 = new List(end - start);
             for (int i = start; i < end; i++) {
                 list1.add(this.get(i));
@@ -457,5 +461,6 @@ public final class List {
         }
     }
 }
+
 
 
