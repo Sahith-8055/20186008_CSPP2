@@ -161,6 +161,9 @@ public class List {
      * the list and not all the elements of the array.
      */
     public String toString() {
+    	if (size == 0) {
+    		return "[]";
+    	}
         String str = "[";
         int i = 0;
         for (i = 0; i < size - 1; i++) {
