@@ -154,7 +154,7 @@ public final class List {
      * @param      index  The index
      */
     public void remove(final int index) {
-        if (index >= 0 && index <= size) {
+        if (index >= 0 && index < size) {
             for (int i = 0; i < size - 1; i++) {
                 list[i] = list[i + 1];
             }
@@ -283,13 +283,13 @@ public final class List {
       * @param      newArray  The new array
       */
      public void removeAll(final int[] newArray) {
-        for (int i = 0; i < newArray.length; i++) {
-            for (int j = 0; j < size(); j++) {
-                if (newArray[i] == get(j)) {
-                    remove(j);
+        for (int element : newArray) {
+            for (int i = 0; i < size; i++) {
+                if (element == list[i]) {
+                    remove(i);
                 }
             }
-         }
+        }
     }
     /*
     Returns a list object containing elements, including startIndex and
