@@ -14,7 +14,7 @@ class Student {
     /**
       * Constructs the object.
       *
-      * @param      name  The name
+      * @param      name1  The name
       */
     Student(final String name1) {
     //A constructor used to initialize the instance variables
@@ -155,7 +155,8 @@ public final class Solution {
                     }
                     String[] arrstring3 = tokens[1].split(",");
                     List object = l.subList(
-                        Integer.parseInt(arrstring3[0]), Integer.parseInt(arrstring3[1]));
+                        Integer.parseInt(arrstring3[0]),
+                        Integer.parseInt(arrstring3[1]));
                     if (object != null) {
                         System.out.println(object);
                     }
@@ -257,8 +258,9 @@ public final class Solution {
                     String[] arrstring3 = tokens[1].split(",");
                     List object = l.subList(Integer.parseInt(arrstring3[0]),
                         Integer.parseInt(arrstring3[1]));
-                    if (object != null)
+                    if (object != null) {
                         System.out.println(object);
+                    }
                     break;
 
                 case "equals":
