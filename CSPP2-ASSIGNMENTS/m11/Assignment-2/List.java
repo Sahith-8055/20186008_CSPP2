@@ -36,7 +36,7 @@ public class List<E> {
         //You can modify the code in this method.
         if (size == list.length) {
             resize();
-        }    
+        }
         list[(size++)] = item;
     }
     /*Inserts all the elements of specified int
