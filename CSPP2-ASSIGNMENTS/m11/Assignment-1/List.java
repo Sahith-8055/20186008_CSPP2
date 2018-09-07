@@ -313,19 +313,16 @@ public final class List {
      * @return     {subList}.
      */
     public List subList(final int start, final int end) {
-        if (start >= end && start < size && end < size) {
-            System.out.println("Index Out of Bounds Exception");
-            return null;
-        } else if (start < 0 || end < 0) {
-            System.out.println("Index Out of Bounds Exception");
-            return null;
-        } else {
+        if (start >= 0 && start < size && 
+            end <= size && end >= 0 && start <=end) {
             List list1 = new List(end - start);
             for (int i = start; i < end; i++) {
                 list1.add(this.get(i));
             }
             return list1;
         }
+        System.out.println("Index Out of Bounds Exception");
+        return null;
     }
     /*
     Returns a boolean indicating whether the parameter i.e a List object is
