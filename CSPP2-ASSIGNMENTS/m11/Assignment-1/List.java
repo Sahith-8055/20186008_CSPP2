@@ -352,7 +352,7 @@ public final class List {
      * {Method to clear all elements from the list}.
      */
     public void clear() {
-        size = 0;
+        removeAll(list);
     }
 
     /**
@@ -460,4 +460,5 @@ public final class List {
         }
     }
 }
+
 
