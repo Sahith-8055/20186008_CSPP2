@@ -284,7 +284,7 @@ public final class List {
       */
      public void removeAll(final int[] newArray) {
         for (int element : newArray) {
-            for (int i = 0; i < size; i++) {
+            for (int i = 0; i < list.length; i++) {
                 if (element == list[i]) {
                     remove(i);
                 }
@@ -312,6 +312,8 @@ public final class List {
         if (start < 0 || end < 0 || start >= end) {
             System.out.println("Index Out of Bounds Exception");
             return null;
+        } else if (start == end) {
+            return new List();
         } else {
             for (int i = start; i < end; i++) {
                 list1.add(list[i]);
