@@ -206,9 +206,12 @@ public class List {
     */
      public void removeAll(int[] newArray) {
         for (int i = 0; i < newArray.length; i++) {
-        	remove(get(i));
+        	for (int j = 0; j < this.size(); j++) {
+        		if (newArray[i] == this.get(i)) {
+        			remove(j);
+        		}
+        	}
          }
-
      }
     /*
     Returns a list object containing elements, including startIndex and
@@ -234,7 +237,13 @@ public class List {
     exactly matching with the given list or not.
     */
     public boolean equals(List l1) {
-    	return true;
+    	int count = 0;
+    	for (int i = 0; i < l1.size(); i++) {
+    		if (contains(l1.get(i))) {
+    			count++;
+    		}
+    	}
+    	return (count == l1.size());
     }
     /*
     * Removes all the elements from list
