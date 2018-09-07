@@ -230,8 +230,8 @@ public class List {
     */
      public void removeAll(int[] newArray) {
         for (int i = 0; i < newArray.length; i++) {
-        	for (int j = 0; j < this.size(); j++) {
-        		if (newArray[i] == this.get(j)) {
+        	for (int j = 0; j < size(); j++) {
+        		if (newArray[i] == get(j)) {
         			remove(j);
         		}
         	}
