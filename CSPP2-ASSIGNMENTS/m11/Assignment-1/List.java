@@ -90,6 +90,11 @@ public final class List {
 
     }
 
+    public List(int capacity) {
+        list = new int[capacity];
+        size = 0;
+    }
+
     /*
      * The add method does what the name suggests. Add an int item to the list.
      * The assumption is to store the item at the end of the list What is the
@@ -249,7 +254,7 @@ public final class List {
      */
     public int indexOf(final int item) {
         for (int i = 0; i < size; i++) {
-            if (item == list[i]) {
+            if (item == get(i)) {
                 return i;
             }
         }
@@ -283,16 +288,11 @@ public final class List {
       * @param      newArray  The new array
       */
      public void removeAll(final int[] newArray) {
-        for (int element : newArray) {
-            int i = size;
-            while (i < size) {
-                if (element == get(i)) {
-                    remove(i);
-                    i++;
-                    i--;
-            } else {
-                i++;
-            }
+        for (int i = 0; i < newArray.length; i++) {
+            int index = indexOf(newArray[i]);
+            while (index != -1) {
+                remove(i);
+                index = indexOf(newArray[i]);
             }
         }
     }
@@ -313,20 +313,19 @@ public final class List {
      * @return     {subList}.
      */
     public List subList(final int start, final int end) {
-        List list1 = new List();
-        if (start < 0 || end < 0 || start >= end) {
-            if (start <= size || end <= size) {
+        if (start >= end) {
             System.out.println("Index Out of Bounds Exception");
             return null;
-            }
-        } else if (start == end) {
-            return new List();
+        } else if (start < 0 || end < 0) {
+            System.out.println("Index Out of Bounds Exception");
+            return null;
         } else {
+            List list1 = new List(end - start);
             for (int i = start; i < end; i++) {
-                list1.add(list[i]);
+                list1.add(this.get(i));
             }
+            return list1;
         }
-        return list1;
     }
     /*
     Returns a boolean indicating whether the parameter i.e a List object is
@@ -336,12 +335,12 @@ public final class List {
     /**
      * {Method to comapre two lists}.
      *
-     * @param      list    The list.
+     * @param      list1    The list1.
      *
      * @return     {Either true (or) false}.
      */
-    public boolean equals(final List list) {
-        return list.toString().equals(this.toString());
+    public boolean equals(final List list1) {
+        return list1.toString().equals(this.toString());
     }
     /*
     * Removes all the elements from list
