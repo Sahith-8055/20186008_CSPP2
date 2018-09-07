@@ -288,6 +288,7 @@ public final class List {
             while (i < size) {
                 if (element == get(i)) {
                     remove(i);
+                    i++;
                     i--;
             } else {
                 i++;
@@ -358,7 +359,7 @@ public final class List {
      * {Method to clear all elements from the list}.
      */
     public void clear() {
-        removeAll(list);
+        size = 0;
     }
 
     /**
