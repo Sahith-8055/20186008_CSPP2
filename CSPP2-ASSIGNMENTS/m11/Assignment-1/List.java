@@ -284,10 +284,14 @@ public final class List {
       */
      public void removeAll(final int[] newArray) {
         for (int element : newArray) {
-            for (int i = 0; i < size; i++) {
+            int i = 0;
+            while (i < list.length) {
                 if (element == list[i]) {
                     remove(i);
-                }
+                    i--;
+            } else {
+                i++;
+            }
             }
         }
     }
