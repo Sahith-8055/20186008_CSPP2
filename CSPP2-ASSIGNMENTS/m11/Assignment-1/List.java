@@ -154,7 +154,7 @@ public final class List {
      * @param      index  The index
      */
     public void remove(final int index) {
-        if (index >= 0 && index < size) {
+        if (index >= 0 && index <= size) {
             for (int i = 0; i < size - 1; i++) {
                 list[i] = list[i + 1];
             }
@@ -290,7 +290,7 @@ public final class List {
                 }
             }
          }
-     }
+    }
     /*
     Returns a list object containing elements, including startIndex and
     excluding endIndex. The first parameter indicates the startIndex and the
