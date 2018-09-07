@@ -502,19 +502,21 @@ public final class Solution {
                         l.removeAll(students);
                     }
                 break;
-                case "subList": {
+                case "subList":
                     if (tokens.length != 2) break;
                     String[] arrstring3 = tokens[1].split(",");
-                    List object = l.subList(Integer.parseInt(arrstring3[0]), Integer.parseInt(arrstring3[1]));
-                    if (object != null)
+                    List object = l.subList(Integer.parseInt(arrstring3[0]),
+                        Integer.parseInt(arrstring3[1]));
+                    if (object != null) {
                         System.out.println(object);
+                    }
                     break;
-                }
+
                 case "equals":
                     if (tokens.length == 2) {
                         String[] lt = tokens[1].split(",");
                         List l2 = new List();
-                        for (int k = 0; k < lt.length; k++ ) {
+                        for (int k = 0; k < lt.length; k++) {
                             l2.add((lt[k]));
                         }
                         System.out.println(l.equals(l2));
@@ -539,28 +541,34 @@ public final class Solution {
         Scanner stdin = new Scanner(new BufferedInputStream(System.in));
         String objectType = stdin.nextLine();
 
-        switch(objectType) {
-            case "S"://This case will be executed for String type list
+        switch (objectType) {
+            case "S":
+            //This case will be executed for String type list
                 executeListString(stdin);
             break;
 
-            case "I"://This case will be executed for Integer type list
+            case "I":
+            //This case will be executed for Integer type list
                 executeListInteger(stdin);
             break;
 
-            case "F"://This case will be executed for Float type list
+            case "F":
+            //This case will be executed for Float type list
                 executeListFloat(stdin);
             break;
 
-            case "C"://This case will be executed for Character type list
+            case "C":
+            //This case will be executed for Character type list
                 executeListString(stdin);
             break;
 
-            case "D"://This case will be executed for Double type list
+            case "D":
+            //This case will be executed for Double type list
                 executeListDouble(stdin);
             break;
 
-            case "O"://This case will be executed for Student type list i.e to store List of Student Objects
+            case "O":
+            //This case will be executed for Student type list i.e to store List of Student Objects
                 executeListStudent(stdin);
                 break;
             default:
