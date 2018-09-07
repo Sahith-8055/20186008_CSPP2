@@ -2,6 +2,10 @@ import java.io.BufferedInputStream;
 import java.util.Scanner;
 import java.util.Arrays;
 
+/**
+ * Class List.
+ * @author Sahith.
+ */
 public class List {
     //Implement all the methods mentioned to build a ListADT
 
@@ -26,6 +30,9 @@ public class List {
      * This is a hard concept to understand. Discuss with your mentor.
      *
     */
+    /**
+     * {Declaring integer array named list}.
+     */
     private int[] list;
     // declare a private int[]
     // don't create the array yet using new
@@ -50,6 +57,9 @@ public class List {
      * to be accessed by the methods that are outside of the List class.
      * 
      */
+    /**
+     * {Declaring integer variable size}.
+     */
     private int size;
     // declare a private int size
     // again, don't initialize it here
@@ -58,6 +68,10 @@ public class List {
     /*
      * The purpose of the constructor is to initialize the class variables with
      * some default values.
+     */
+
+    /**
+     * Constructs the object.
      */
     public List() {
 
@@ -75,7 +89,7 @@ public class List {
         size = 0;
 
     }
-    
+
     /*
      * The add method does what the name suggests. Add an int item to the list.
      * The assumption is to store the item at the end of the list What is the
@@ -84,13 +98,20 @@ public class List {
      *
      * The method returns void (nothing)
      */
+    /**
+     * {Add an item to the list}.
+     *
+     * @param      item  The item
+     */
     public void add(int item) {
         if (size > list.length) {
         	resize();
         }
         list[size++] = item;
     }
-
+    /**
+     * {}.
+     */
     private void resize() {
     	list = Arrays.copyOf(list, 2 * list.length);
     }
@@ -210,7 +231,7 @@ public class List {
      public void removeAll(int[] newArray) {
         for (int i = 0; i < newArray.length; i++) {
         	for (int j = 0; j < this.size(); j++) {
-        		if (newArray[i] == this.get(i)) {
+        		if (newArray[i] == this.get(j)) {
         			remove(j);
         		}
         	}
