@@ -314,6 +314,8 @@ public final class List {
             return null;
         } else if (start == end) {
             return new List();
+        } else if (start < end) {
+            return new List();
         } else {
             for (int i = start; i < end; i++) {
                 list1.add(list[i]);
