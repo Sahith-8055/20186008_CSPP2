@@ -155,7 +155,7 @@ public final class List {
      */
     public void remove(final int index) {
         if (index >= 0 && index < size) {
-            for (int i = 0; i < size - 1; i++) {
+            for (int i = index; i < size - 1; i++) {
                 list[i] = list[i + 1];
             }
             size--;
