@@ -335,8 +335,8 @@ public final class List {
      */
     public boolean equals(final List l1) {
         int count = 0;
-        for (int i = 0; i < l1.size(); i++) {
-            if (contains(l1.get(i))) {
+        for (int i = 0; i < size(); i++) {
+            if (list[i] == l1.get(count)) {
                 count++;
             }
         }
