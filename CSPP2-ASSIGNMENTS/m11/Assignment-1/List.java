@@ -340,14 +340,8 @@ public final class List {
      *
      * @return     {Either true (or) false}.
      */
-    public boolean equals(final List l1) {
-        int count = 0;
-        for (int i = 0; i < size(); i++) {
-            if (list[i] == l1.get(count)) {
-                count++;
-            }
-        }
-        return (count == l1.size());
+    public boolean equals(final List list) {
+        return list.toString().equals(this.toString());
     }
     /*
     * Removes all the elements from list
