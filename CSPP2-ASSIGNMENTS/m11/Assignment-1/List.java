@@ -284,7 +284,7 @@ public final class List {
       */
      public void removeAll(final int[] newArray) {
         for (int i = 0; i < newArray.length; i++) {
-            for (int j = 0; j < i; j++) {
+            for (int j = 0; j < size(); j++) {
                 if (newArray[i] == get(j)) {
                     remove(j);
                 }
@@ -430,7 +430,7 @@ public final class List {
                         l.removeAll(a);
                     }
                 break;
-                case "subList": {
+                case "subList": 
                     if (tokens.length != 2) {
                         break;
                     }
@@ -441,7 +441,6 @@ public final class List {
                         System.out.println(object);
                     }
                     break;
-                }
                 case "equals":
                     if (tokens.length == 2) {
                         String[] lt = tokens[1].split(",");
