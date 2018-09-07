@@ -110,7 +110,7 @@ public class List {
         list[size++] = item;
     }
     /**
-     * {}.
+     * {Resize the list}.
      */
     private void resize() {
     	list = Arrays.copyOf(list, 2 * list.length);
@@ -122,6 +122,12 @@ public class List {
      *
      * The method returns an int. Empty list should return 0.
      *
+     */
+
+    /**
+     * {Method to calculate the size}.
+     *
+     * @return     {Size}.
      */
     public int size() {
         return size;
@@ -140,6 +146,12 @@ public class List {
      * removed item, to the left So, the new array looks like this. array =
      * [1,3,0,0,0,0,0,0,0,0] The method returns void (nothing)
      *
+     */
+
+    /**
+     * {Method to remove the item from the list}.
+     *
+     * @param      index  The index
      */
     public void remove(int index) {
     	if (index >= 0 && index < size) {
@@ -161,6 +173,14 @@ public class List {
      * exist. How do we check if the position is greater than the number of
      * items in the list? Would size variable be useful?
      */
+
+    /**
+     * {Method to get the item from a list using index value}.
+     *
+     * @param      index  The index
+     *
+     * @return     {Item from the list}.
+     */
     public int get(int index) {
     	if (index < 0 || index >= size) {
     		return -1;	
@@ -181,6 +201,12 @@ public class List {
      * Example: [1,2,3,0,0,0,0,0,0,0] toString should only return the items in
      * the list and not all the elements of the array.
      */
+
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
     	if (size == 0) {
     		return "[]";
@@ -198,12 +224,28 @@ public class List {
      * the method So, iterate through the list and return true if the item
      * exists and otherwise false
      */
+
+    /**
+     * {Method to find out if the element is present (or) not}.
+     *
+     * @param      item  The item
+     *
+     * @return     {Either true (or) false}.
+     */
     public boolean contains(int item) {
         return indexOf(item) >= 0;
     }
     /*
      * Returns the index of the first occurrence of the specified element in
      * this list, or -1 if this list does not contain the element.
+     */
+
+    /**
+     * Searches for the first match.
+     *
+     * @param      item  The item
+     *
+     * @return     {Index value}.
      */
     public int indexOf(int item) {
         for (int i = 0; i < size; i++) {
@@ -216,6 +258,12 @@ public class List {
     /*
     Inserts all the elements of specified int array to the end of list    
     */
+
+    /**
+     * Adds a new integer array to the existing list.
+     *
+     * @param      newArray  The new array
+     */
     public void addAll(int[] newArray) {
         if (size + newArray.length >= list.length) {
             resize();
@@ -228,6 +276,12 @@ public class List {
      Removes all of its elements that are contained in the specified int 
      array.    
     */
+
+     /**
+      * Removes all the items from a list.
+      *
+      * @param      newArray  The new array
+      */
      public void removeAll(int[] newArray) {
         for (int i = 0; i < newArray.length; i++) {
         	for (int j = 0; j < size(); j++) {
@@ -244,6 +298,15 @@ public class List {
     "Index Out of Bounds Exception" if any of values start and end are negative
     and also if start is greater than end.
     */
+
+    /**
+     * {Method to create a sublist from a given list}.
+     *
+     * @param      start  The start
+     * @param      end    The end
+     *
+     * @return     {subList}.
+     */
     public List subList(int start, int end) {
     	List list1 = new List();
     	if (start < 0 || end < 0 || start > end) {
@@ -262,6 +325,14 @@ public class List {
     Returns a boolean indicating whether the parameter i.e a List object is
     exactly matching with the given list or not.
     */
+
+    /**
+     * {Method to comapre two lists}.
+     *
+     * @param      l1    The l 1
+     *
+     * @return     {Either true (or) false}.
+     */
     public boolean equals(List l1) {
     	int count = 0;
     	for (int i = 0; i < l1.size(); i++) {
@@ -276,14 +347,22 @@ public class List {
     * Think about this case and make the method
     * the simpler.
     */
+
+    /**
+     * {Method to clear all elements from the list}.
+     */
     public void clear() {
     	size = 0;
     }
 
+    /**
+     * {Main method}.
+     *
+     * @param      args  The arguments
+     */
     public static void main(String[] args) {
         // create an object of the list to invoke methods on it
         List l = new List();
-
         // code to read the test cases input file
         Scanner stdin = new Scanner(new BufferedInputStream(System.in));
         // check if there is one more line to process
