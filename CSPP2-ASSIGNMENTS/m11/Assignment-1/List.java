@@ -315,7 +315,7 @@ public final class List {
     public List subList(final int start, final int end) {
         List list1 = new List();
         if (start < 0 || end < 0 || start >= end) {
-            if (start < size || end < size) {
+            if (start <= size || end <= size) {
             System.out.println("Index Out of Bounds Exception");
             return null;
             }
@@ -336,7 +336,7 @@ public final class List {
     /**
      * {Method to comapre two lists}.
      *
-     * @param      l1    The l 1
+     * @param      list    The list.
      *
      * @return     {Either true (or) false}.
      */
