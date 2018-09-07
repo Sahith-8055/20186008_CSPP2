@@ -284,7 +284,7 @@ public final class List {
       */
      public void removeAll(final int[] newArray) {
         for (int i = 0; i < newArray.length; i++) {
-            for (int j = 0; j < size(); j++) {
+            for (int j = 0; j < i; j++) {
                 if (newArray[i] == get(j)) {
                     remove(j);
                 }
