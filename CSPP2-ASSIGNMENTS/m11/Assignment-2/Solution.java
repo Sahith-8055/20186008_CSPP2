@@ -305,7 +305,7 @@ public final class Solution {
                     if (tokens.length == 2) {
                         String[] t1 = tokens[1].split(",");
                         Float[] temp = new Float[t1.length];
-                        for(int i = 0; i < temp.length; i++) {
+                        for (int i = 0; i < temp.length; i++) {
                             temp[i] = Float.parseFloat(t1[i]);
                         }
                         l.addAll(temp);
@@ -315,24 +315,29 @@ public final class Solution {
                     if (tokens.length == 2) {
                         String[] t2 = tokens[1].split(",");
                         Float[] a = new Float[t2.length];
-                        for(int i = 0; i < t2.length; i++)
+                        for (int i = 0; i < t2.length; i++) {
                             a[i] = Float.parseFloat(t2[i]);
+                        }
                         l.removeAll(a);
                     }
                 break;
-                case "subList": {
-                    if (tokens.length != 2) break;
+                case "subList":
+                    if (tokens.length != 2) {
+                        break;
+                    }
                     String[] arrstring3 = tokens[1].split(",");
-                    List object = l.subList(Integer.parseInt(arrstring3[0]), Integer.parseInt(arrstring3[1]));
-                    if (object != null)
+                    List object = l.subList(Integer.parseInt(arrstring3[0]),
+                        Integer.parseInt(arrstring3[1]));
+                    if (object != null) {
                         System.out.println(object);
+                    }
                     break;
-                }
+
                 case "equals":
                     if (tokens.length == 2) {
                         String[] lt = tokens[1].split(",");
                         List l2 = new List();
-                        for (int k = 0; k < lt.length; k++ ) {
+                        for (int k = 0; k < lt.length; k++) {
                             l2.add(Float.parseFloat(lt[k]));
                         }
                         System.out.println(l.equals(l2));
@@ -352,7 +357,7 @@ public final class Solution {
      *
      * @param      stdin  The stdin
      */
-    public static void executeListString(Scanner stdin) {
+    public static void executeListString(final Scanner stdin) {
         List<String> l = new List();
         while (stdin.hasNext()) {
             // read the line
@@ -362,7 +367,7 @@ public final class Solution {
             // based on the list operation invoke the corresponding method
             switch (tokens[0]) {
                 case "add":
-                    if (tokens.length == 2){
+                    if (tokens.length == 2) {
                         String[] t = tokens[1].split(",");
                         if (t.length == 1) {
                             l.add(tokens[1]);
@@ -407,19 +412,23 @@ public final class Solution {
                         l.removeAll(t2);
                     }
                 break;
-                case "subList": {
-                    if (tokens.length != 2) break;
+                case "subList":
+                    if (tokens.length != 2) {
+                        break;
+                    }
                     String[] arrstring3 = tokens[1].split(",");
-                    List object = l.subList(Integer.parseInt(arrstring3[0]), Integer.parseInt(arrstring3[1]));
-                    if (object != null)
+                    List object = l.subList(Integer.parseInt(arrstring3[0]),
+                        Integer.parseInt(arrstring3[1]));
+                    if (object != null) {
                         System.out.println(object);
+                    }
                     break;
-                }
+
                 case "equals":
                     if (tokens.length == 2) {
                         String[] lt = tokens[1].split(",");
                         List l2 = new List();
-                        for (int k = 0; k < lt.length; k++ ) {
+                        for (int k = 0; k < lt.length; k++) {
                             l2.add((lt[k]));
                         }
                         System.out.println(l.equals(l2));
@@ -439,7 +448,7 @@ public final class Solution {
      *
      * @param      stdin  The stdin
      */
-    public static void executeListStudent(Scanner stdin) {
+    public static void executeListStudent(final Scanner stdin) {
         List<Student> l = new List();
         while (stdin.hasNext()) {
             // read the line
@@ -449,7 +458,7 @@ public final class Solution {
             // based on the list operation invoke the corresponding method
             switch (tokens[0]) {
                 case "add":
-                    if (tokens.length == 2){
+                    if (tokens.length == 2) {
                         String[] t = tokens[1].split(",");
                         if (t.length == 1) {
                             l.add(new Student(tokens[1]));
@@ -486,7 +495,7 @@ public final class Solution {
                     if (tokens.length == 2) {
                         String[] t1 = tokens[1].split(",");
                         Student[] students = new Student[t1.length];
-                        for (int i = 0; i < t1.length ;i++) {
+                        for (int i = 0; i < t1.length; i++) {
                             students[i] = new Student(t1[i]);
                         }
                         l.addAll(students);
@@ -496,7 +505,7 @@ public final class Solution {
                     if (tokens.length == 2) {
                         String[] t1 = tokens[1].split(",");
                         Student[] students = new Student[t1.length];
-                        for (int i = 0; i < t1.length ;i++) {
+                        for (int i = 0; i < t1.length; i++) {
                             students[i] = new Student(t1[i]);
                         }
                         l.removeAll(students);
@@ -568,7 +577,8 @@ public final class Solution {
             break;
 
             case "O":
-            //This case will be executed for Student type list i.e to store List of Student Objects
+            //This case will be executed for Student type list
+            //i.e to store List of Student Objects
                 executeListStudent(stdin);
                 break;
             default:
