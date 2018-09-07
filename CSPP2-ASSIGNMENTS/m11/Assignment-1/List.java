@@ -253,8 +253,7 @@ public class List {
     * the simpler.
     */
     public void clear() {
-    	removeAll(list);
-
+    	size = 0;
     }
 
     public static void main(String[] args) {
