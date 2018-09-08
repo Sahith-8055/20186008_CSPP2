@@ -160,7 +160,7 @@ class Set {
      */
     public int[][] cartesianProduct(final Set list1) {
         int count = 0;
-        int[][] set3 = new int[size][2];
+        int[][] set3 = new int[size * list1.size][2];
         if (size == 0) {
             return null;
         } else {
