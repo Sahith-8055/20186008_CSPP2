@@ -64,15 +64,38 @@ class Set {
     	}
     }
 
+    public int get(int index) {
+    	if (index < 0 || index >= size) {
+            return -1;
+        } else {
+            return list[index];
+        }
+    }
+
     public Set intersection(Set list1) {
-    	return null;
+    	Set set2 = new Set();
+    	for (int i = 0; i < size; i++) {
+    		int count = 0;
+    		for (int j = 0; j < list1.size(); j++) {
+    			if (list1.get(j) == list[i]) {
+    				count++;
+    		}
+    		if (count >= 1) {
+    			set2.add(get(i));
+    		}
+    	}
+    	}
+
+    	return set2;
     }
 
     public Set retainAll(int[] items) {
-    	return null;
+    	Set set1 = new Set();
+    	set1.add(items);
+    	return intersection(set1);
     }
 
-    public int[][] cartesianProduct(Set list) {
+    public int[][] cartesianProduct(Set list1) {
     	return null;
     }
 }
