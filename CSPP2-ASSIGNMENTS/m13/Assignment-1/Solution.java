@@ -170,9 +170,8 @@ class Set {
                 }
             }
         return set3;
-    } else {
-        return null;
     }
+    return null;
 }
 }
 /**
