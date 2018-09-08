@@ -169,10 +169,11 @@ class Set {
                     count++;
                 }
             }
-            return set3;
-        }
-        return null;
+        return set3;
     }
+    return null;
+}
+
 }
 /**
  * Solution class for code-eval.
