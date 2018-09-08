@@ -9,16 +9,39 @@ import java.util.Arrays;
      * Here E is a type parameter, and it will be replaced with
         actual type when the object got created.
      */
+
+/**
+ * Class List.
+ *
+ * @param      <E>   {Parameter which will be replaced when real object is created}.
+ */
 public class List<E> {
+    /**
+     * {Declaring an Array of type E}.
+     */
     private E[] list;
+    /**
+     * {Declaring an integer variable size}.
+     */
     private int size;
     //Constructor
+
+    /**
+     * Constructs the object.
+     */
     public List() {
         // Create a variable of the type Object[]
-        list = ((E[])new Object[10]);//Object is the base class for all the classes
+        list = ((E[])new Object[10]);
+        //Object is the base class for all the classes
         size = 0;
     }
     //Overloaded Constructor
+
+    /**
+     * Constructs the object.
+     *
+     * @param      param  The parameter
+     */
     public List(int param) {
         list = ((E[])new Object[param]);
         size = 0;
@@ -31,6 +54,12 @@ public class List<E> {
      * Think about how you can use the size variable to add item
      * to the list.
      */
+
+    /**
+     * {Method to add an item to the list}.
+     *
+     * @param      item  The item
+     */
     public void add(E item) {
         //Inserts the specified element at the end of the list.
         //You can modify the code in this method.
@@ -41,9 +70,15 @@ public class List<E> {
     }
     /*Inserts all the elements of specified int
     array to the end of list*/
+
+    /**
+     * Method to add all the items to the end of the list.
+     *
+     * @param      items  The items
+     */
     public void addAll(E[] items) {
         //Write logic for addAll method
-        for (E element:items) {
+        for (E element : items) {
             add(element);
         }
     }
@@ -61,8 +96,14 @@ public class List<E> {
      *
      * The method returns an int. Empty list should return 0.
      */
+
+    /**
+     * {Method to find the size of the list}.
+     *
+     * @return     {Size of the list, an integer type}.
+     */
     public int size() {
-    	return size;
+        return size;
     }
     /*
      * The remove method does what the name suggests.
@@ -83,6 +124,12 @@ public class List<E> {
      * So, the new array looks like this.
      * array = [1,3,0,0,0,0,0,0,0,0]
      * The method returns void (nothing)
+     */
+
+    /**
+     * {Method to remove an item from an index position}.
+     *
+     * @param      index  The index
      */
     public void remove(int index) {
         //Write logic for remove method
@@ -105,6 +152,14 @@ public class List<E> {
      * in the list then that would mean the item doesn't exist.
      * How do we check if the position is greater than the
      * number of items in the list? Would size variable be useful?
+     */
+
+    /**
+     * {Method to get the element at a particular index position}.
+     *
+     * @param      index  The index
+     *
+     * @return     {Value, which is of type E}.
      */
     public E get(int index) {
          //Write logic for get method
@@ -134,6 +189,12 @@ public class List<E> {
      * not all the elements of the array.
      *
      */
+
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
         if (size == 0) {
             return "[]";
@@ -152,8 +213,16 @@ public class List<E> {
      * So, iterate through the list and return true if
      * the item exists and otherwise false
      */
+
+    /**
+     * {Method to check whether the item is present in the list}.
+     *
+     * @param      item  The item
+     *
+     * @return     {Boolean Value}.
+     */
     public boolean contains(E item) {
-		//Write logic for contains method
+        //Write logic for contains method
         boolean check = false;
         for (int i = 0; i < size; i++) {
             if (list[i].equals(item)) {
@@ -168,6 +237,13 @@ public class List<E> {
      * or -1 if this list does not contain the element.
      */
 
+    /**
+     * Searches for the first match.
+     *
+     * @param      item  The item
+     *
+     * @return     {Index value, which is an integer}.
+     */
     public int indexOf(E item) {
        //Write logic for indexOf method
         for (int i = 0; i < size; i++) {
@@ -180,6 +256,12 @@ public class List<E> {
 
     /* Removes all of its elements that
      * are contained in the specified int array.
+     */
+
+    /**
+     * Method to remove all the items from the list.
+     *
+     * @param      items  The items
      */
     public void removeAll(E[] items) {
         // write the logic
@@ -197,6 +279,15 @@ public class List<E> {
      indicates the startIndex and the second parameter
      indicates the endIndex.
      */
+
+    /**
+     * {Method to create a sublist}.
+     *
+     * @param      n     { parameter_description }
+     * @param      n2    The n 2
+     *
+     * @return     {List}
+     */
     public List subList(int n, int n2) {
         if (n >= 0 && n < size
             && n2 <= size && n2 >= 0 && n <= n2) {
@@ -212,6 +303,14 @@ public class List<E> {
     /*Returns a boolean indicating whether the parameter
       i.e a List object is exactly matching with the given list or not.
      */
+
+    /**
+     * {Method to check whether the list object matches with the given list}.
+     *
+     * @param      listdata  The listdata
+     *
+     * @return     {Boolean value}.
+     */
     public boolean equals(List<E> listdata) {
         int count = 0;
         for (int i = 0; i < size; i++) {
@@ -222,6 +321,10 @@ public class List<E> {
         return (count == listdata.size());
     }
     /*Removes all the elements from list*/
+
+    /**
+     * {Method to clear the list}.
+     */
     public void clear() {
         size = 0;
     }
