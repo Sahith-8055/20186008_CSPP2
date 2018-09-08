@@ -9,13 +9,19 @@ import java.util.Arrays;
 class Set {
     //your code goes here...
     //Good luck :-)
+    /**
+     * Declaring the size of the set, an integer.
+     */
     private int size;
+    /**
+     * {Declaring an integer array named list}.
+     */
     private int[] list;
 
     /**
      * Constructs the object.
      */
-    public Set() {
+    Set() {
         size = 0;
         final int number = 10;
         list = new int[number];
