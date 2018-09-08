@@ -170,10 +170,10 @@ class Set {
                     count++;
                 }
             }
-        return set3;
+            return set3;
+        }
     }
-}
-        return null;
+    return null;
 }
 }
 /**
