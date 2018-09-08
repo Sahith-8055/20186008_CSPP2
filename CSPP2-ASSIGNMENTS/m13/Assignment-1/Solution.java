@@ -161,15 +161,13 @@ class Set {
     public int[][] cartesianProduct(final Set list1) {
         int count = 0;
         int[][] set3 = new int[size * list1.size][2];
-        if (size != 0) {
             for (int i = 0; i < size; i++) {
                 for (int j = 0; j < list1.size; j++) {
                     set3[count][0] = get(i);
                     set3[count][1] = list1.get(j);
                     count++;
                 }
-            }
-        return set3;
+            return set3;
     }
     return null;
 }
