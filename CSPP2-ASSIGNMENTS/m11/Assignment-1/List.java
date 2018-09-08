@@ -3,7 +3,7 @@ import java.util.Scanner;
 import java.util.Arrays;
 
 /**
- * Class List.
+ * Class of List.
  * @author Sahith.
  */
 public final class List {
@@ -461,6 +461,4 @@ public final class List {
         }
     }
 }
-
-
 
