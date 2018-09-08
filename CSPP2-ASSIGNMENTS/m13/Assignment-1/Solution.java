@@ -12,19 +12,38 @@ class Set {
     private int size;
     private int[] list;
 
+    /**
+     * Constructs the object.
+     */
     public Set() {
         size = 0;
         final int number = 10;
         list = new int[number];
     }
+
+    /**
+     * {Method to find the size of the set}.
+     *
+     * @return     {Size of the set which is an integer}
+     */
     public int size() {
         return size;
     }
 
+    /**
+     * {Method to resize the array dynamically}.
+     */
     private void resize() {
         list = Arrays.copyOf(list, 2 * list.length);
     }
 
+    /**
+     * {Method to check if the item is present in the set}.
+     *
+     * @param      item  The item
+     *
+     * @return     {Boolean value}
+     */
     public boolean contains(final int item) {
         for (int i = 0; i < size; i++) {
             if (item == list[i]) {
@@ -34,6 +53,11 @@ class Set {
         return false;
     }
 
+    /**
+     * {Method to add the items to a set}.
+     *
+     * @param      item  The item
+     */
     public void add(final int item) {
         if (size > list.length) {
             resize();
@@ -42,6 +66,11 @@ class Set {
         }
     }
 
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
         if (size == 0) {
             return "{}";
@@ -55,6 +84,11 @@ class Set {
         return str;
     }
 
+    /**
+     * {Method to add the given items to the set}.
+     *
+     * @param      items  The items
+     */
     public void add(final int[] items) {
         if (size + items.length >= list.length) {
             resize();
@@ -64,7 +98,14 @@ class Set {
         }
     }
 
-    public int get(int index) {
+    /**
+     * {Method to retrieve the item from the set}.
+     *
+     * @param      index  The index
+     *
+     * @return     {Item present at that index position}
+     */
+    public int get(final int index) {
         if (index < 0 || index >= size) {
             return -1;
         } else {
@@ -72,7 +113,14 @@ class Set {
         }
     }
 
-    public Set intersection(Set list1) {
+    /**
+     * {Method to find the intersection of two sets}.
+     *
+     * @param      list1  The list 1
+     *
+     * @return     {Another set which has the common elements}
+     */
+    public Set intersection(final Set list1) {
         Set set2 = new Set();
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < list1.size; j++) {
@@ -84,13 +132,27 @@ class Set {
         return set2;
     }
 
-    public Set retainAll(int[] items) {
+    /**
+     * {Method to retain all the elements of a given integer array}.
+     *
+     * @param      items  The items
+     *
+     * @return     {Set which retains the common elements}
+     */
+    public Set retainAll(final int[] items) {
         Set set1 = new Set();
         set1.add(items);
         return intersection(set1);
     }
 
-    public int[][] cartesianProduct(Set list1) {
+    /**
+     * {Method to find the cartesian product between two sets}.
+     *
+     * @param      list1  The list 1
+     *
+     * @return     {2-Dimensional Array}
+     */
+    public int[][] cartesianProduct(final Set list1) {
         return null;
     }
 }
