@@ -130,7 +130,7 @@ class Set {
         Set set2 = new Set();
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < list1.size; j++) {
-                if (this.list[i] == list1.get(j)) {
+                if (list[i] == list1.get(j)) {
                     set2.add(get(i));
                 }
             }
@@ -159,7 +159,16 @@ class Set {
      * @return     {2-Dimensional Array}
      */
     public int[][] cartesianProduct(final Set list1) {
-        return null;
+        int count = 0;
+        int[][] set3 = new int[size][list1.size];
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < list1.size; j++) {
+                set3[count][0] = get(i);
+                set3[count][1] = list1.get(j);
+                count++;
+            }
+        }
+        return set3;
     }
 }
 /**
