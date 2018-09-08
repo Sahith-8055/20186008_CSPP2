@@ -75,12 +75,12 @@ class Set {
     public Set intersection(Set list1) {
     	Set set2 = new Set();
     	for (int i = 0; i < size; i++) {
-    		int count = 0;
-    		for (int j = 0; j < list1.size(); j++) {
+    		int flag = 0;
+    		for (int j = 0; j < list1.size; j++) {
     			if (list1.get(j) == list[i]) {
-    				count++;
+    				flag++;
     		}
-    		if (count >= 1) {
+    		if (flag >= 1) {
     			set2.add(get(i));
     		}
     	}
