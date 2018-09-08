@@ -13,59 +13,59 @@ class Set {
     private int[] list;
 
     public Set() {
-    	size = 0;
-    	final int number = 10;
-    	list = new int[number];
+        size = 0;
+        final int number = 10;
+        list = new int[number];
     }
     public int size() {
-    	return size;
+        return size;
     }
 
     private void resize() {
-    	list = Arrays.copyOf(list, 2 * list.length);
+        list = Arrays.copyOf(list, 2 * list.length);
     }
 
     public boolean contains(final int item) {
-    	for (int i = 0; i < size; i++) {
-    		if (item == list[i]) {
-    			return true;
-    		}
-    	}
-    	return false;
+        for (int i = 0; i < size; i++) {
+            if (item == list[i]) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public void add(final int item) {
-    	if (size > list.length) {
-    		resize();
-    	} else if (!(contains(item))) {
-    		list[size++] = item;
-    	}
+        if (size > list.length) {
+            resize();
+        } else if (!(contains(item))) {
+            list[size++] = item;
+        }
     }
 
     public String toString() {
-    	if (size == 0) {
-    		return "{}";
-    	}
-    	String str = "{";
-    	int i = 0;
-    	for (i = 0; i < size - 1; i++) {
-    		str += list[i] + ", ";
-    	}
-    	str += list[i] + "}";
-    	return str;
+        if (size == 0) {
+            return "{}";
+        }
+        String str = "{";
+        int i = 0;
+        for (i = 0; i < size - 1; i++) {
+            str += list[i] + ", ";
+        }
+        str += list[i] + "}";
+        return str;
     }
 
     public void add(final int[] items) {
-    	if (size + items.length >= list.length) {
-    		resize();
-    	}
-    	for (int i = 0; i < items.length; i++) {
-    		add(items[i]);
-    	}
+        if (size + items.length >= list.length) {
+            resize();
+        }
+        for (int i = 0; i < items.length; i++) {
+            add(items[i]);
+        }
     }
 
     public int get(int index) {
-    	if (index < 0 || index >= size) {
+        if (index < 0 || index >= size) {
             return -1;
         } else {
             return list[index];
@@ -73,31 +73,25 @@ class Set {
     }
 
     public Set intersection(Set list1) {
-    	Set set2 = new Set();
-    	for (int i = 0; i < size; i++) {
-    		// int flag = 0;
-    		for (int j = 0; j < list1.size; j++) {
-    			if (list[i] == list1.get(j)) {
-    				// flag++;
-    				set2.add(get(i));
-    		}
-    		// if (flag >= 1) {
-
-    		// }
-    	}
-    	}
-
-    	return set2;
+        Set set2 = new Set();
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < list1.size; j++) {
+                if (list[i] == list1.get(j)) {
+                    set2.add(get(i));
+                }
+            }
+        }
+        return set2;
     }
 
     public Set retainAll(int[] items) {
-    	Set set1 = new Set();
-    	set1.add(items);
-    	return intersection(set1);
+        Set set1 = new Set();
+        set1.add(items);
+        return intersection(set1);
     }
 
     public int[][] cartesianProduct(Set list1) {
-    	return null;
+        return null;
     }
 }
 /**
@@ -108,7 +102,7 @@ public final class Solution {
      * Constructs the object.
      */
     private Solution() {
-    	//Empty.
+        //Empty.
     }
     /**
      * helper function to convert string input to int array.
