@@ -183,9 +183,9 @@ public final class List {
      * The method returns an int. Empty list should return 0.
      */
     /**
+     * {Method to find the size of the list}.
      *
-     *
-     * @return     { description_of_the_return_value }
+     * @return     {Size of the list which is an integer}.
      */
     public int size() {
         return size;
@@ -212,7 +212,7 @@ public final class List {
      * The method returns void (nothing)
      */
     /**
-     * { function_description }.
+     * {Method to remove the item from an index position}.
      *
      * @param      index  The index
      */
@@ -241,7 +241,7 @@ public final class List {
      * number of items in the list? Would size variable be useful?
      */
     /**
-     * { function_description }.
+     * {Method to get an item from the list}.
      *
      * @param      index  The index
      *
@@ -302,11 +302,11 @@ public final class List {
      * the item exists and otherwise false
      */
     /**
-     * { function_description }.
+     * {Method to check if the item is present in the list (or) not}.
      *
      * @param      item  The item
      *
-     * @return     { description_of_the_return_value }
+     * @return     {Boolean Value}.
      */
     public boolean contains(final int item) {
         return indexOf(item) == -1;
@@ -322,7 +322,7 @@ public final class List {
      *
      * @param      item  The item
      *
-     * @return     { description_of_the_return_value }
+     * @return     {Index value which is an integer}.
      */
     public int indexOf(final int item) {
         for (int i = 0; i < size; i++) {
@@ -335,7 +335,7 @@ public final class List {
    /*Inserts all the elements of specified int
     array to the end of list*/
     /**
-     * Adds all.
+     * Adds all the elements.
      *
      * @param      items  The items
      */
@@ -354,7 +354,7 @@ public final class List {
         The method returns void (nothing)
      */
     /**
-     * { function_description }.
+     * {Method to add the item at a specified index}.
      *
      * @param      index  The index
      * @param      item   The item
@@ -374,11 +374,11 @@ public final class List {
     }
     /* Returns the count of occurances of a given item in the list*/
     /**
-     * { function_description }.
+     * {Method to count the number of times the item is present in the list}.
      *
      * @param      item  The item
      *
-     * @return     { description_of_the_return_value }
+     * @return     {Count of the item which is an integer}.
      */
     public int count(final int item) {
         int flag = 0;
@@ -391,7 +391,7 @@ public final class List {
     }
 
     /**
-     * { function_description }.
+     * {Main Method}.
      *
      * @param      args  The arguments
      */
