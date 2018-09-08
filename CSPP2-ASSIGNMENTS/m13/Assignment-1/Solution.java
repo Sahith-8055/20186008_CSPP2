@@ -77,7 +77,7 @@ class Set {
     	for (int i = 0; i < size; i++) {
     		int flag = 0;
     		for (int j = 0; j < list1.size; j++) {
-    			if (list1.get(j) == list[i]) {
+    			if (list[i] == list1.get(j)) {
     				flag++;
     		}
     		if (flag >= 1) {
