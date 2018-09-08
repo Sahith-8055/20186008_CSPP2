@@ -76,7 +76,7 @@ class Set {
         Set set2 = new Set();
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < list1.size; j++) {
-                if (list[i] == list1.get(j)) {
+                if (this.list[i] == list1.get(j)) {
                     set2.add(get(i));
                 }
             }
