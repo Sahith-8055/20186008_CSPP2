@@ -41,7 +41,13 @@ final class SortedSet extends Set {
      * Exception for signaling invalid subset selection errors.
      */
     class InvalidSubsetSelectionException extends Exception {
-        InvalidSubsetSelectionException(String s) {
+
+        /**
+         * Constructs the object.
+         *
+         * @param      s     {String s}.
+         */
+        InvalidSubsetSelectionException(final String s) {
             super(s);
         }
     }
@@ -80,7 +86,13 @@ final class SortedSet extends Set {
      * Exception for signaling set empty errors.
      */
     class SetEmptyException extends Exception {
-        SetEmptyException(String s) {
+
+        /**
+         * Constructs the object.
+         *
+         * @param      s     {String s}.
+         */
+        SetEmptyException(final String s) {
             super(s);
         }
     }
@@ -112,9 +124,11 @@ final class SortedSet extends Set {
 }
 
     /**
-     * {Method to find the last element}.
+     * {Method to find the last element of the set}.
      *
-     * @return     {Highest value in the set}
+     * @return     { description_of_the_return_value }
+     *
+     * @throws     SetEmptyException  {User-defined Exception}.
      */
     public int last() throws SetEmptyException {
         if (size == 0) {
