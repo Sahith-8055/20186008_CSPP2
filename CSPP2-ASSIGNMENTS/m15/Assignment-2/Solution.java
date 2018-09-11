@@ -5,7 +5,7 @@ import java.util.Arrays;
  * Class for sorted set.
  * @author Sahith.
  */
-class SortedSet extends Set {
+final class SortedSet extends Set {
 
     /**
      * {Sort Method}.
@@ -95,7 +95,7 @@ class SortedSet extends Set {
      * @throws     SetEmptyException  {User-defined Exception}.
      */
     public int[] headSet(final int toElement) throws SetEmptyException {
-        if (size() == 0) {
+        if (size <= 0) {
             throw new SetEmptyException("Set Empty Exception");
         } else {
             int[] result = new int[size];
