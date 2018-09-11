@@ -98,7 +98,7 @@ final class SortedSet extends Set {
         int temp = 0;
         int[] result = new int[size];
         if (size > 0) {
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < size(); i++) {
             if (set[i] < toElement) {
                 result[i] = set[i];
                 temp++;
