@@ -95,19 +95,19 @@ class SortedSet extends Set {
      * @throws     SetEmptyException  {User-defined Exception}.
      */
     public int[] headSet(final int toElement) throws SetEmptyException {
-        if (size != 0) {
-        int[] result = new int[size];
-        int temp = 0;
-        for (int i = 0; i < size; i++) {
-            if (set[i] < toElement) {
-                result[i] = set[i];
-                temp++;
+        if (size == 0) {
+            throw new SetEmptyException("Set Empty Exception");
+        } else {
+            int[] result = new int[size];
+            int temp = 0;
+            for (int i = 0; i < size; i++) {
+                if (set[i] < toElement) {
+                    result[i] = set[i];
+                    temp++;
             }
         }
         return Arrays.copyOf(result, temp);
-    } else {
-        throw new SetEmptyException("Set Empty Exception");
-    }
+        }
 }
 
     /**
