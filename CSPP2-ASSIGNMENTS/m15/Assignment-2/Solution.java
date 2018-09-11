@@ -97,14 +97,14 @@ final class SortedSet extends Set {
     public int[] headSet(final int toElement) throws SetEmptyException {
         int temp = 0;
         int[] result = new int[size];
-        if (result.length > 0) {
-        for (int i = 0; i < size(); i++) {
+        if (size > 0) {
+        for (int i = 0; i < size; i++) {
             if (set[i] < toElement) {
                 result[i] = set[i];
                 temp++;
             }
         }
-        if (result.length <= 0) {
+        if (temp <= 0) {
             throw new SetEmptyException("Set Empty Exception");
         }
     }
