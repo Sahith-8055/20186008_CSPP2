@@ -1,14 +1,12 @@
-import java.io.BufferedInputStream;
-import java.util.Scanner;
 import java.util.Arrays;
 /**
  * Class for set.
  * @author Sahith.
  */
 public class Set {
-	/**
-	 * {Declaring an integer array}.
-	 */
+    /**
+     * {Declaring an integer array}.
+     */
     public int[] set;
 
     /**
@@ -20,7 +18,7 @@ public class Set {
      * Default constructor to create an array with the size 10.
      */
     public Set() {
-    	final int number = 10;
+        final int number = 10;
         set = new int[number];
         size = 0;
     }
@@ -31,7 +29,7 @@ public class Set {
      * the size of the current set.
      * @param item to be inserted at the last.
      */
-    public void add(int item) {
+    public void add(final int item) {
         if (size == set.length) {
             resize();
         }
@@ -52,7 +50,7 @@ public class Set {
      *
      * @param      arr   The arr
      */
-    public void add(int[] arr) {
+    public void add(final int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             add(arr[i]);
         }
@@ -65,7 +63,7 @@ public class Set {
      *
      * @return     {Set of common elements}.
      */
-    public Set intersection(Set other) {
+    public Set intersection(final Set other) {
         Set result = new Set();
         for (int i = 0; i < this.size; i++) {
             if (other.contains(this.get(i))) {
