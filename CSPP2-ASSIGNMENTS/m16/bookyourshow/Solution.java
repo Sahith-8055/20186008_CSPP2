@@ -66,6 +66,8 @@ class Show {
 
     public String toString() {
         String s = "";
+        s += moviename + "," + showdatetime + ",";
+        s += Arrays.toString(seats);
         return s;
     }
 }
@@ -224,9 +226,18 @@ class BookYourShow {
         return null;
     }
     public void bookAShow(final String moviename, final String datetime, final Patron p) {
+        addAPatron(p);
         Show avaliableShow = getAShow(moviename, datetime);
         if (avaliableShow != null) {
-
+            String[] seats = avaliableShow.getSeats();
+            String[] bookedSeats = p.getbookedSeats();
+            for (int i = 0; i < seats.length; i++) {
+                for (int j = 0; j < bookedSeats.length; j++) {
+                    if (seats[i].equals(bookedSeats[j]) && !seats[i].equals("N/A")) {
+                        seats[i] = "N/A";
+                    }
+                }
+            }
         } else {
             System.out.println("No show");
         }
@@ -235,19 +246,22 @@ class BookYourShow {
         Show show = getAShow(moviename, datetime);
         if (show != null) {
             for (int i = 0; i < patronSize; i++) {
-                if (mobileNumber.equals(patrons[i].getmobileNumber())) {
+                if (patrons[i].getmobileNumber().equals(mobileNumber)) {
                     System.out.println(mobileNumber + " " + moviename + " " + datetime);
-                } else {
-                    System.out.println("Invalid");
+                    return;
                 }
             }
+            System.out.println("Invalid");
         } else {
-            System.out.println("No show");
+            System.out.println("Invalid");
         }
         //Mobile number check, datatime check and moviename check.
     }
     public void showAll() {
         //Prints all show properties.
+        for (int i = 0; i < showSize; i++) {
+            System.out.println(shows[i]);
+        }
     }
 }
 
