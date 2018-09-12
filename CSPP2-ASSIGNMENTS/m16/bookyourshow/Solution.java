@@ -31,7 +31,8 @@ class Show {
      * @param      showdatetime1  The showdatetime 1
      * @param      seats1         The seats 1
      */
-    Show(final String moviename1, final String showdatetime1, final String[] seats1) {
+    Show(final String moviename1, final String showdatetime1,
+        final String[] seats1) {
         this.moviename = moviename1;
         this.showdatetime = showdatetime1;
         this.seats = seats1;
@@ -64,12 +65,23 @@ class Show {
         return this.seats;
     }
 
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
         String s = "";
         s += moviename + "," + showdatetime + ",";
         s += Arrays.toString(seats).replace(", ",",");
         return s;
     }
+
+    /**
+     * {Method to print movie name and date & time of show}.
+     *
+     * @return     {String}
+     */
     public String exceptTickets() {
         String s = "";
         s += moviename + "," + showdatetime;
@@ -108,7 +120,8 @@ class Patron {
      * @param      mobilenumber1  The mobilenumber 1
      * @param      bookedseats1   The bookedseats 1
      */
-    Patron(final String customername1, final String mobilenumber1, final String[] bookedseats1) {
+    Patron(final String customername1, final String mobilenumber1,
+        final String[] bookedseats1) {
         this.customername = customername1;
         this.mobilenumber = mobilenumber1;
         this.bookedseats = bookedseats1;
@@ -167,8 +180,9 @@ class BookYourShow {
      * Constructs the object.
      */
     BookYourShow() {
-        this.patrons = new Patron[10];
-        this.shows = new Show[10];
+        final int number = 10;
+        this.patrons = new Patron[number];
+        this.shows = new Show[number];
         this.showSize = 0;
         this.patronSize = 0;
     }
@@ -209,12 +223,27 @@ class BookYourShow {
         }
         shows[showSize++] = show;
     }
+
+    /**
+     * Adds a patron.
+     *
+     * @param      patron  The patron
+     */
     public void addAPatron(final Patron patron) {
         if (patronSize >= patrons.length) {
             resize();
         }
         patrons[patronSize++] = patron;
     }
+
+    /**
+     * Method to check the avaliability of show.
+     *
+     * @param      moviename  The moviename
+     * @param      datetime   The datetime
+     *
+     * @return     A show.
+     */
     public Show getAShow(final String moviename, final String datetime) {
         for (int i = 0; i < showSize; i++) {
             if (shows[i].getmovieName().equals(moviename)
@@ -224,7 +253,16 @@ class BookYourShow {
         }
         return null;
     }
-    public void bookAShow(final String moviename, final String datetime, final Patron p) {
+
+    /**
+     * {Method to book a show}.
+     *
+     * @param      moviename  The moviename
+     * @param      datetime   The datetime
+     * @param      p          {Object of patron class}.
+     */
+    public void bookAShow(final String moviename, final String datetime,
+        final Patron p) {
         addAPatron(p);
         Show avaliableShow = getAShow(moviename, datetime);
         if (avaliableShow != null) {
@@ -241,7 +279,16 @@ class BookYourShow {
             System.out.println("No show");
         }
     }
-    public void printTicket(String moviename, String datetime, String mobileNumber) {
+
+    /**
+     * {Method to print the ticket for a booked show}.
+     *
+     * @param      moviename     The moviename
+     * @param      datetime      The datetime
+     * @param      mobileNumber  The mobile number
+     */
+    public void printTicket(final String moviename, final String datetime,
+        final String mobileNumber) {
         Show show = getAShow(moviename, datetime);
         if (show != null) {
             for (int i = 0; i < patronSize; i++) {
@@ -254,8 +301,11 @@ class BookYourShow {
         } else {
             System.out.println("Invalid");
         }
-        //Mobile number check, datatime check and moviename check.
     }
+
+    /**
+     * Method to display all the shows.
+     */
     public void showAll() {
         //Prints all show properties.
         for (int i = 0; i < showSize; i++) {
@@ -267,7 +317,7 @@ class BookYourShow {
 /**
  * Class for solution.
  */
-public class Solution {
+public final class Solution {
 
     /**
      * Constructs the object.
