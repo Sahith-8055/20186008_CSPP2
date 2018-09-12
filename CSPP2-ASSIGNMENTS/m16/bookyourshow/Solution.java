@@ -70,6 +70,11 @@ class Show {
         s += Arrays.toString(seats).replace(", ",",");
         return s;
     }
+    public String exceptTickets() {
+        String s = "";
+        s += moviename + "," + showdatetime + ",";
+        return s;
+    }
 }
 
 /**
@@ -134,12 +139,6 @@ class Patron {
      */
     public String[] getbookedSeats() {
         return this.bookedseats;
-    }
-
-    public String toString() {
-        String s = "";
-        return s;
-
     }
 }
 
