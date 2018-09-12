@@ -73,7 +73,7 @@ class Show {
     public String toString() {
         String s = "";
         s += moviename + "," + showdatetime + ",";
-        s += Arrays.toString(seats).replace(", ",",");
+        s += Arrays.toString(seats).replace(", ", ",");
         return s;
     }
 
@@ -270,7 +270,8 @@ class BookYourShow {
             String[] bookedSeats = p.getbookedSeats();
             for (int i = 0; i < seats.length; i++) {
                 for (int j = 0; j < bookedSeats.length; j++) {
-                    if (seats[i].equals(bookedSeats[j]) && !seats[i].equals("N/A")) {
+                    if (seats[i].equals(bookedSeats[j])
+                        && !seats[i].equals("N/A")) {
                         seats[i] = "N/A";
                     }
                 }
@@ -293,7 +294,8 @@ class BookYourShow {
         if (show != null) {
             for (int i = 0; i < patronSize; i++) {
                 if (patrons[i].getmobileNumber().equals(mobileNumber)) {
-                    System.out.println(mobileNumber + " " + moviename + " " + datetime);
+                    System.out.println(
+                        mobileNumber + " " + moviename + " " + datetime);
                     return;
                 }
             }
