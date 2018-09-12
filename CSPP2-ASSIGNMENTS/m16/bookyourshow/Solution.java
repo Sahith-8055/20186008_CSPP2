@@ -236,7 +236,7 @@ class BookYourShow {
         if (show != null) {
             for (int i = 0; i < patronSize; i++) {
                 if (mobileNumber.equals(patrons[i].getmobileNumber())) {
-                    System.out.println(moviename + " " + datetime + " " + mobileNumber);
+                    System.out.println(mobileNumber + " " + moviename + " " + datetime);
                 } else {
                     System.out.println("Invalid");
                 }
