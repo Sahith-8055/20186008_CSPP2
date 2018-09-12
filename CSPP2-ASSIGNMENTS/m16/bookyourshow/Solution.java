@@ -72,7 +72,7 @@ class Show {
     }
     public String exceptTickets() {
         String s = "";
-        s += moviename + "," + showdatetime + ",";
+        s += moviename + "," + showdatetime;
         return s;
     }
 }
