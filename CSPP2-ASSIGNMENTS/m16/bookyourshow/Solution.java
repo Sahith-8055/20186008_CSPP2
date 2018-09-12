@@ -67,7 +67,7 @@ class Show {
     public String toString() {
         String s = "";
         s += moviename + "," + showdatetime + ",";
-        s += Arrays.toString(seats);
+        s += Arrays.toString(seats).replace(", ",",");
         return s;
     }
 }
