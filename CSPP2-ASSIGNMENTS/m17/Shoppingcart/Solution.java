@@ -347,10 +347,10 @@ public final class Solution {
                     sc.showCart();
                 break;
                 case "totalAmount":
-                    System.out.println("totalAmount:" + sc.getTotalAmount());
+                    System.out.println("totalAmount:" + " " + sc.getTotalAmount());
                 break;
                 case "payableAmount":
-                    System.out.println("payable amount:" + sc.getPayableAmount());
+                    System.out.println("payable amount:" + " " + sc.getPayableAmount());
                 break;
                 case "catalog":
                     sc.showCatalog();
