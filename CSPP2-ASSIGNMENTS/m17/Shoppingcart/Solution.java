@@ -296,8 +296,11 @@ class ShoppingCart {
         }
     }
     public void printInvoice() {
+        System.out.println(cartSize + "cart");
+        System.out.println(catalogSize + "cat");
         for (int i = 0; i < cartSize; i++) {
             int p = indexofCatalog(cart[i]);
+            System.out.println(i + "--------" + p);
             System.out.println(cart[i].getproductName() + " " + cart[i].getQuantity() + " " + catalog[p].getunitPrice());
         }
         System.out.println("Total:" + getTotalAmount());
