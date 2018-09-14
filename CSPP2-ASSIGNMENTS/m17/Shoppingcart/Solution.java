@@ -235,7 +235,8 @@ class ShoppingCart {
                for (int j = index1; j < cartSize; j++) {
                     cart[j] = cart[j + 1];
                 }
-            } else if (cart[index1].getQuantity() > item.getQuantity()) {
+                cartSize--;
+            } else if (cart[index1].getQuantity() >= item.getQuantity()) {
                 cart[index1].setQuantity(cart[index1].getQuantity() - item.getQuantity());
             } else {
                 System.out.println("Not Applicable");
@@ -283,7 +284,7 @@ class ShoppingCart {
         amount += tax;
         return amount;
     }
-    public void isCoupon(String coupon) {
+    public void isCoupon(final String coupon) {
         for (int i = 0; i < coupons.length; i++) {
             if (coupon.equals(coupons[i]) && !avaliableCoupon) {
                 t = Character.getNumericValue(coupons[i].charAt(3));
@@ -323,7 +324,7 @@ public final class Solution {
      *
      * @param      args  The arguments
      */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         Scanner scan = new Scanner(System.in);
         ShoppingCart sc = new ShoppingCart();
         while (scan.hasNext()) {
