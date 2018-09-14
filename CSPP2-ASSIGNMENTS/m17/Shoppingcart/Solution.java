@@ -209,7 +209,7 @@ class ShoppingCart {
         }
         int index = indexofCart(item);
         if (index == -1) {
-            for (int i = 0; i < cartSize; i++) {
+            for (int i = 0; i < catalogSize; i++) {
             if (item.getproductName().equals(catalog[i].getproductName())
                 && item.getQuantity() <= catalog[i].getQuantity()) {
                 cart[cartSize] = item;
@@ -297,7 +297,6 @@ class ShoppingCart {
         }
     }
     public void printInvoice() {
-        System.out.println(cartSize);
         for (int i = 0; i < cartSize; i++) {
             int p = indexofCatalog(cart[i]);
             System.out.println(cart[i].getproductName() + " " + cart[i].getQuantity() + " " + catalog[p].getunitPrice());
