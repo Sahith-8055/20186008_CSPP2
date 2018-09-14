@@ -291,7 +291,7 @@ class ShoppingCart {
                 break;
             }
         }
-        if (avaliableCoupon) {
+        if (!avaliableCoupon) {
             System.out.println("Invalid coupon");
         }
     }
