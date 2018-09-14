@@ -303,7 +303,7 @@ class ShoppingCart {
         System.out.println("Total:" + getTotalAmount());
         System.out.println("Disc%:" + discount);
         System.out.println("Tax:" + tax);
-        System.out.println("payableAmount:" + getPayableAmount());
+        System.out.println("payable amount:" + getPayableAmount());
     }
 }
 /**
