@@ -350,7 +350,7 @@ public final class Solution {
                     System.out.println("totalAmount:" + " " + sc.getTotalAmount());
                 break;
                 case "payableAmount":
-                    System.out.println("payable amount:" + " " + sc.getPayableAmount());
+                    System.out.println("Payable amount:" + " " + sc.getPayableAmount());
                 break;
                 case "catalog":
                     sc.showCatalog();
