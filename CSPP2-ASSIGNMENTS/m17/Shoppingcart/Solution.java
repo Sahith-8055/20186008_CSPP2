@@ -212,7 +212,8 @@ class ShoppingCart {
             for (int i = 0; i < cartSize; i++) {
             if (item.getproductName().equals(catalog[i].getproductName())
                 && item.getQuantity() <= catalog[i].getQuantity()) {
-                cart[cartSize++] = item;
+                cart[cartSize] = item;
+                cartSize++;
             }
         }
     } else {
