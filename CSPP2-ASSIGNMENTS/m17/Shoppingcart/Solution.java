@@ -358,8 +358,8 @@ class ShoppingCart {
         for (int i = 0; i < cartSize; i++) {
             int p = indexofCatalog(cart[i]);
             System.out.println(
-            cart[i].getproductName() + " " +
-            cart[i].getQuantity() + " " + catalog[p].getunitPrice());
+            cart[i].getproductName() + " "
+            + cart[i].getQuantity() + " " + catalog[p].getunitPrice());
         }
         System.out.println("Total:" + getTotalAmount());
         System.out.println("Disc%:" + discount);
@@ -411,12 +411,12 @@ public final class Solution {
                     sc.showCart();
                 break;
                 case "totalAmount":
-                    System.out.println("totalAmount:" + " " +
-                        sc.getTotalAmount());
+                    System.out.println("totalAmount:" + " "
+                        + sc.getTotalAmount());
                 break;
                 case "payableAmount":
-                    System.out.println("Payable amount:" + " " +
-                        sc.getPayableAmount());
+                    System.out.println("Payable amount:" + " "
+                        + sc.getPayableAmount());
                 break;
                 case "catalog":
                     sc.showCatalog();
