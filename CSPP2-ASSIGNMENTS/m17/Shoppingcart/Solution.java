@@ -358,7 +358,8 @@ class ShoppingCart {
         for (int i = 0; i < cartSize; i++) {
             int p = indexofCatalog(cart[i]);
             System.out.println(
-            cart[i].getproductName() + " " + cart[i].getQuantity() + " " + catalog[p].getunitPrice());
+            cart[i].getproductName() + " " +
+            cart[i].getQuantity() + " " + catalog[p].getunitPrice());
         }
         System.out.println("Total:" + getTotalAmount());
         System.out.println("Disc%:" + discount);
@@ -392,25 +393,30 @@ public final class Solution {
             switch (tokens[0]) {
                 case "Item":
                     String[] items = tokens[1].split(",");
-                    sc.addToCatalog(new Item(items[0], Integer.parseInt(items[1]),
+                    sc.addToCatalog(new Item(items[0],
+                        Integer.parseInt(items[1]),
                         Double.parseDouble(items[2])));
                 break;
                 case "add":
                     items = tokens[1].split(",");
-                    sc.addToCart(new Item(items[0], Integer.parseInt(items[1])));
+                    sc.addToCart(new Item(items[0],
+                        Integer.parseInt(items[1])));
                 break;
                 case "remove":
                     items = tokens[1].split(",");
-                    sc.removeFromCart(new Item(items[0], Integer.parseInt(items[1])));
+                    sc.removeFromCart(new Item(items[0],
+                        Integer.parseInt(items[1])));
                 break;
                 case "show":
                     sc.showCart();
                 break;
                 case "totalAmount":
-                    System.out.println("totalAmount:" + " " + sc.getTotalAmount());
+                    System.out.println("totalAmount:" + " " +
+                        sc.getTotalAmount());
                 break;
                 case "payableAmount":
-                    System.out.println("Payable amount:" + " " + sc.getPayableAmount());
+                    System.out.println("Payable amount:" + " " +
+                        sc.getPayableAmount());
                 break;
                 case "catalog":
                     sc.showCatalog();
