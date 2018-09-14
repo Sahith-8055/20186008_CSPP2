@@ -137,7 +137,7 @@ class ShoppingCart {
         final int number = 10;
         this.catalog = new Item[number];
         this.cart = new Item[number];
-        this.coupons = new String[]{"IND10","IND20","IND30","IND40"};
+        this.coupons = new String[]{"IND10","IND20","IND30","IND50"};
         this.cartSize = 0;
         this.catalogSize = 0;
         this.t = 0.0;
@@ -285,15 +285,17 @@ class ShoppingCart {
         return amount;
     }
     public void isCoupon(final String coupon) {
-        for (int i = 0; i < coupons.length; i++) {
-            if (coupon.equals(coupons[i]) && !avaliableCoupon) {
-                t = Character.getNumericValue(coupons[i].charAt(3));
-                avaliableCoupon = true;
-                break;
-            }
-        }
         if (!avaliableCoupon) {
-            System.out.println("Invalid coupon");
+            for (int i = 0; i < coupons.length; i++) {
+                if (coupon.equals(coupons[i])) {
+                    t = Character.getNumericValue(coupons[i].charAt(3));
+                    avaliableCoupon = true;
+                    break;
+                }
+            }
+            if (!avaliableCoupon) {
+                System.out.println("Invalid coupon");
+            }
         }
     }
     public void printInvoice() {
