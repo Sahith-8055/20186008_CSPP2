@@ -287,10 +287,10 @@ class ShoppingCart {
         for (int i = 0; i < coupons.length; i++) {
             if (coupon.equals(coupons[i]) && !avaliableCoupon) {
                 t = Character.getNumericValue(coupons[i].charAt(3));
-                avaliableCoupon = true;
                 break;
             }
         }
+        avaliableCoupon = true;
         if (!avaliableCoupon) {
             System.out.println("Invalid coupon");
         }
