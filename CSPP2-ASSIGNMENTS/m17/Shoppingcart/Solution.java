@@ -191,7 +191,7 @@ class ShoppingCart {
         return -1;
     }
     public int indexofCatalog(final Item item) {
-        for (int i = 0; i < cartSize; i++) {
+        for (int i = 0; i < catalogSize; i++) {
             if (catalog[i].getproductName().equals(item.getproductName())) {
                 return i;
             }
