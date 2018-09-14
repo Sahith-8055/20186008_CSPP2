@@ -300,10 +300,10 @@ class ShoppingCart {
             int p = indexofCatalog(cart[i]);
             System.out.println(cart[i].getproductName() + " " + cart[i].getQuantity() + " " + catalog[p].getunitPrice());
         }
-        System.out.println("Total:" + getTotalAmount());
+        System.out.println("Total:" + " " + getTotalAmount());
         System.out.println("Disc%:" + discount);
         System.out.println("Tax:" + tax);
-        System.out.println("payable amount:" + getPayableAmount());
+        System.out.println("payable amount:" + " " + getPayableAmount());
     }
 }
 /**
