@@ -31,7 +31,8 @@ class Item {
      * @param      quantity1     The quantity 1
      * @param      unitprice1    The unitprice 1
      */
-    Item(final String productname1, final int quantity1, final double unitprice1) {
+    Item(final String productname1, final int quantity1,
+        final double unitprice1) {
         this.productname = productname1;
         this.quantity = quantity1;
         this.unitprice = unitprice1;
@@ -128,11 +129,30 @@ class ShoppingCart {
      * {Size of the catalog}.
      */
     private int catalogSize;
+    /**
+     * {Declaring a String array of coupons}.
+     */
     private String[] coupons;
+    /**
+     * {Declaring a variable avaliablecoupon}.
+     */
     private boolean avaliableCoupon;
+    /**
+     * {Variable t}.
+     */
     private double t;
+    /**
+     * {Vaiable tax}.
+     */
     private double tax;
+    /**
+     * {Variable discount}.
+     */
     private double discount;
+
+    /**
+     * Constructs the object.
+     */
     ShoppingCart() {
         final int number = 10;
         this.catalog = new Item[number];
@@ -182,6 +202,14 @@ class ShoppingCart {
         }
         catalog[catalogSize++] = item;
     }
+
+    /**
+     * {Method to find the index of an item in cart}.
+     *
+     * @param      item  The item
+     *
+     * @return     {Index value}
+     */
     public int indexofCart(final Item item) {
         for (int i = 0; i < cartSize; i++) {
             if (cart[i].getproductName().equals(item.getproductName())) {
@@ -190,6 +218,14 @@ class ShoppingCart {
         }
         return -1;
     }
+
+    /**
+     * {Method to find the index of an item in catalog}.
+     *
+     * @param      item  The item
+     *
+     * @return     {Index value}
+     */
     public int indexofCatalog(final Item item) {
         for (int i = 0; i < catalogSize; i++) {
             if (catalog[i].getproductName().equals(item.getproductName())) {
@@ -198,8 +234,9 @@ class ShoppingCart {
         }
         return -1;
     }
+
     /**
-     * Method to add an item to the cart.
+     * Method to add an item to cart.
      *
      * @param      item  The item
      */
@@ -276,6 +313,12 @@ class ShoppingCart {
         }
         return amount;
     }
+
+    /**
+     * Method to get the payable amount.
+     *
+     * @return     The payable amount.
+     */
     public double getPayableAmount() {
         double amount = getTotalAmount();
         discount = amount * (t/10);
@@ -284,6 +327,12 @@ class ShoppingCart {
         amount += tax;
         return amount;
     }
+
+    /**
+     * Determines if coupon is valid (or) not.
+     *
+     * @param      coupon  The coupon
+     */
     public void isCoupon(final String coupon) {
         if (!avaliableCoupon) {
             for (int i = 0; i < coupons.length; i++) {
@@ -298,6 +347,10 @@ class ShoppingCart {
             }
         }
     }
+
+    /**
+     * {Method to print the invoice}.
+     */
     public void printInvoice() {
         for (int i = 0; i < cartSize; i++) {
             int p = indexofCatalog(cart[i]);
