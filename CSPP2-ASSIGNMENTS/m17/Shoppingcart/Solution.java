@@ -214,6 +214,7 @@ class ShoppingCart {
                 && item.getQuantity() <= catalog[i].getQuantity()) {
                 cart[cartSize] = item;
                 cartSize++;
+                System.out.println(cartSize);
             }
         }
     } else {
@@ -333,7 +334,7 @@ public final class Solution {
             switch (tokens[0]) {
                 case "Item":
                     String[] items = tokens[1].split(",");
-                    System.out.println(new Item(items[0], Integer.parseInt(items[1]),
+                    sc.addToCatalog(new Item(items[0], Integer.parseInt(items[1]),
                         Double.parseDouble(items[2])));
                 break;
                 case "add":
