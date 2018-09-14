@@ -157,7 +157,7 @@ class ShoppingCart {
         final int number = 10;
         this.catalog = new Item[number];
         this.cart = new Item[number];
-        this.coupons = new String[]{"IND10","IND20","IND30","IND50"};
+        this.coupons = new String[]{"IND10", "IND20", "IND30", "IND50"};
         this.cartSize = 0;
         this.catalogSize = 0;
         this.t = 0.0;
@@ -274,7 +274,8 @@ class ShoppingCart {
                 }
                 cartSize--;
             } else if (cart[index1].getQuantity() >= item.getQuantity()) {
-                cart[index1].setQuantity(cart[index1].getQuantity() - item.getQuantity());
+                cart[index1].setQuantity(
+                    cart[index1].getQuantity() - item.getQuantity());
             } else {
                 System.out.println("Not Applicable");
             }
@@ -285,7 +286,8 @@ class ShoppingCart {
      */
     public void showCart() {
         for (int i = 0; i < cartSize; i++) {
-            System.out.println(cart[i].getproductName() + " " + cart[i].getQuantity());
+            System.out.println(
+                cart[i].getproductName() + " " + cart[i].getQuantity());
         }
     }
 
@@ -320,10 +322,11 @@ class ShoppingCart {
      * @return     The payable amount.
      */
     public double getPayableAmount() {
+        final double x = 0.15;
         double amount = getTotalAmount();
-        discount = amount * (t/10);
+        discount = amount * (t / (2 + 2 + 2 + 2 + 2));
         amount -= discount;
-        tax = amount * 0.15;
+        tax = amount * x;
         amount += tax;
         return amount;
     }
@@ -337,7 +340,7 @@ class ShoppingCart {
         if (!avaliableCoupon) {
             for (int i = 0; i < coupons.length; i++) {
                 if (coupon.equals(coupons[i])) {
-                    t = Character.getNumericValue(coupons[i].charAt(3));
+                    t = Character.getNumericValue(coupons[i].charAt(2 + 1));
                     avaliableCoupon = true;
                     break;
                 }
@@ -354,7 +357,8 @@ class ShoppingCart {
     public void printInvoice() {
         for (int i = 0; i < cartSize; i++) {
             int p = indexofCatalog(cart[i]);
-            System.out.println(cart[i].getproductName() + " " + cart[i].getQuantity() + " " + catalog[p].getunitPrice());
+            System.out.println(
+            cart[i].getproductName() + " " + cart[i].getQuantity() + " " + catalog[p].getunitPrice());
         }
         System.out.println("Total:" + getTotalAmount());
         System.out.println("Disc%:" + discount);
