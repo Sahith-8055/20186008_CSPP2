@@ -301,6 +301,7 @@ class ShoppingCart {
         for (int i = 0; i < cartSize; i++) {
             int p = indexofCatalog(cart[i]);
             System.out.println(i + "--------" + p);
+            System.out.println(catalog[1]);
             System.out.println(cart[i].getproductName() + " " + cart[i].getQuantity() + " " + catalog[p].getunitPrice());
         }
         System.out.println("Total:" + getTotalAmount());
