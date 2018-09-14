@@ -284,7 +284,6 @@ class ShoppingCart {
         return amount;
     }
     public void isCoupon(String coupon) {
-        System.out.println("Hi");
         for (int i = 0; i < coupons.length; i++) {
             if (coupon.equals(coupons[i]) && !avaliableCoupon) {
                 t = Character.getNumericValue(coupons[i].charAt(3));
