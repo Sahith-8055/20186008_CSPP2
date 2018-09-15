@@ -70,7 +70,7 @@ class SortedSet extends Set {
      *
      * @param      toElement  To element
      *
-     * @return     { description_of_the_return_value }
+     * @return     {Array}
      */
     public int[] headSet(final int toElement) {
         int[] result = new int[size];
@@ -87,7 +87,7 @@ class SortedSet extends Set {
     /**
      * {Method to find the last element}.
      *
-     * @return     { description_of_the_return_value }
+     * @return     {Value at a particular index}.
      */
     public int last() {
         if (size == 0) {
@@ -122,9 +122,9 @@ public final class Solution {
     /**
      * {Method to print integer array}.
      *
-     * @param      s     { parameter_description }
+     * @param      s     {Varible s of String type}
      *
-     * @return     { description_of_the_return_value }
+     * @return     {Integer Array}
      */
     public static int[] intArray(final String s) {
         String input = s;

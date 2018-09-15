@@ -63,7 +63,7 @@ public class Set {
      *
      * @param      other  The other
      *
-     * @return     { description_of_the_return_value }
+     * @return     {Set of common elements}.
      */
     public Set intersection(Set other) {
         Set result = new Set();
@@ -80,7 +80,7 @@ public class Set {
      *
      * @param      arr   The arr
      *
-     * @return     { description_of_the_return_value }
+     * @return     {Set of elements}
      */
     public Set retainAll(final int[] arr) {
         Set other = new Set();
@@ -95,7 +95,7 @@ public class Set {
      *
      * @param      other  The other
      *
-     * @return     { description_of_the_return_value }
+     * @return     {2-Dimensional Array}
      */
     public int[][] cartesianProduct(final Set other) {
         int [][] result = new int[this.size() * other.size()][2];
@@ -115,7 +115,7 @@ public class Set {
     /**
      * {Size method}.
      *
-     * @return     { description_of_the_return_value }
+     * @return     {Size of the set}
      */
     public int size() {
         return size;
@@ -169,7 +169,7 @@ public class Set {
      *
      * @param      item  The item
      *
-     * @return     { description_of_the_return_value }
+     * @return     {Index of that element}.
      */
     public int indexOf(final int item) {
         for (int i = 0; i < size; i++) {
