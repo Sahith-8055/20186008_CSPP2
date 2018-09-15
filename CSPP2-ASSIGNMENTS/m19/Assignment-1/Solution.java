@@ -3,6 +3,29 @@ import java.util.Arrays;
 /**
  * Solution class for code-eval.
  */
+class Quiz {
+    private String[] questiontext;
+    private int[] maximummarks;
+    private String[] answerchoices;
+    private int size;
+    Quiz() {
+        this.questiontext = new String[10];
+        this.maximummarks = new int[10];
+        this.answerchoices = new String[10];
+        this.size = 0;
+    }
+    public void add(final String item) {
+        questiontext[size++] = item;
+    }
+    public int getSize() {
+        return size;
+    }
+}
+class Question {
+    Question() {
+
+    }
+}
 public final class Solution {
      /**
      * Constructs the object.
@@ -62,7 +85,10 @@ public final class Solution {
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
-
+        for (int i = 0; i < questionCount; i++) {
+            String[] token = s.nextLine().split(":");
+            quiz.add(token[i]);
+        }
         System.out.println("4 are added to the quiz");
 
     }
@@ -78,6 +104,9 @@ public final class Solution {
         // write your code here to display the quiz questions
         // read the user responses from the console
         // store the user respones in the quiz object
+        for (int j = 0; j < answerCount; j++) {
+
+        }
 
     }
 
@@ -88,21 +117,5 @@ public final class Solution {
      */
     public static void displayScore(final Quiz quiz) {
         // write your code here to display the score report
-    }
-    static class Quiz {
-        private String[] choices;
-        private int size;
-        Quiz() {
-            choices = new String[10];
-            size = 0;
-        }
-        public void addAnswer(final String ans) {
-            choices[size++] = ans;
-        }
-    }
-    static class Question {
-        Question() {
-
-        }
     }
 }
