@@ -273,12 +273,12 @@ public final class Solution {
                     System.out.println("Invalid penalty for " + tokens[0]);
                     return;
                 } else {
-                    System.out.println(q + " " + "are added to the quiz");
                     Question question = new Question(tokens[0], options, Integer.parseInt(tokens[2]),
                     Integer.parseInt(tokens[2 + 1]), Integer.parseInt(tokens[2 + 2]));
                     quiz.addQuestion(question);
                 }
             }
+            System.out.println(q + " " + "are added to the quiz");
         }
     }
     /**
@@ -317,6 +317,8 @@ public final class Solution {
      */
     public static void displayScore(final Quiz quiz) {
         // write your code here to display the score report using quiz object.
-        quiz.showReport();
+        if (quiz.getQuestion(0) != null) {
+            quiz.showReport();
+        }
     }
 }
