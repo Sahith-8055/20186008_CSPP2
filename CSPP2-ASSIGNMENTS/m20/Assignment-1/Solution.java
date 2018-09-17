@@ -183,6 +183,9 @@ class Quiz {
                     + Integer.toString(question.getMaxMarks());
                     System.out.println(s);
                     l += question.getMaxMarks();
+            } else {
+                s = "Wrong Answer! - Penalty:" + " " + Integer.toString(question.getPenalty());
+                l += question.getPenalty();
             }
         }
         System.out.println("Total Score:" + " " + Integer.toString(l));
