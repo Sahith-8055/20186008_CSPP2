@@ -185,6 +185,7 @@ class Quiz {
                     l += question.getMaxMarks();
             } else {
                 s = "Wrong Answer! - Penalty:" + " " + Integer.toString(question.getPenalty());
+                System.out.println(s);
                 l += question.getPenalty();
             }
         }
