@@ -253,14 +253,13 @@ public final class Solution {
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
-        System.out.println(q + " " + "are added to the quiz");
         if (q > 0) {
             for (int i = 0; i < q; i++) {
                 String[] tokens = scan.nextLine().split(":");
                 String[] options = tokens[1].split(",");
                 Question question = new Question(tokens[0], options, Integer.parseInt(tokens[2]),
                     Integer.parseInt(tokens[2 + 1]), Integer.parseInt(tokens[2 + 2]));
-                if (tokens.length != 5) {
+                if (tokens.length != 2 + 2 + 1) {
                     System.out.println("Error! Malformed question");
                 } else if (options.length < 2) {
                     System.out.println(tokens[0] + "does not have enough answer choices");
@@ -270,6 +269,8 @@ public final class Solution {
                     System.out.println("Invalid max marks for " + tokens[0]);
                 } else if (Integer.parseInt(tokens[2 + 2]) >= 0) {
                     System.out.println("Invalid penalty for " + tokens[0]);
+                } else if (q == 1) {
+                    System.out.println("Quiz does not have questions");
                 } else {
                     quiz.addQuestion(question);
                 }
