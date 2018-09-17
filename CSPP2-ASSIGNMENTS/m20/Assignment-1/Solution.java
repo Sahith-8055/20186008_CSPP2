@@ -279,6 +279,9 @@ public final class Solution {
                 }
             }
             System.out.println(q + " " + "are added to the quiz");
+        } else {
+            System.out.println("Quiz does not have questions");
+            return;
         }
     }
     /**
