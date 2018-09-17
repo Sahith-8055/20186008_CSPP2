@@ -258,8 +258,6 @@ public final class Solution {
             for (int i = 0; i < q; i++) {
                 String[] tokens = scan.nextLine().split(":");
                 String[] options = tokens[1].split(",");
-                Question question = new Question(tokens[0], options, Integer.parseInt(tokens[2]),
-                    Integer.parseInt(tokens[2 + 1]), Integer.parseInt(tokens[2 + 2]));
                 if (tokens.length != 2 + 2 + 1) {
                     System.out.println("Error! Malformed question");
                 } else if (options.length < 2) {
@@ -271,6 +269,8 @@ public final class Solution {
                 } else if (Integer.parseInt(tokens[2 + 2]) >= 0) {
                     System.out.println("Invalid penalty for " + tokens[0]);
                 } else {
+                    Question question = new Question(tokens[0], options, Integer.parseInt(tokens[2]),
+                    Integer.parseInt(tokens[2 + 1]), Integer.parseInt(tokens[2 + 2]));
                     quiz.addQuestion(question);
                 }
             }
