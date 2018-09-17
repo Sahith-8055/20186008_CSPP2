@@ -169,8 +169,6 @@ class Quiz {
     }
     /**
      * Shows the report.
-     *
-     * @return     {String representation}
      */
     public void showReport() {
         String s = "";
@@ -184,7 +182,8 @@ class Quiz {
                     System.out.println(s);
                     l += question.getMaxMarks();
             } else {
-                s = " Wrong Answer! - Penalty:" + " " + Integer.toString(question.getPenalty());
+                s = " Wrong Answer! - Penalty:" + " " + Integer.toString(
+                    question.getPenalty());
                 System.out.println(s);
                 l += question.getPenalty();
             }
@@ -267,8 +266,11 @@ public final class Solution {
                 } else if (options.length < 2) {
                     System.out.println(tokens[0] + " does not have enough answer choices");
                     return;
-                } else if (Integer.parseInt(tokens[2]) < 1 || Integer.parseInt(tokens[2]) > options.length) {
-                    System.out.println("Error! Correct answer choice number is out of range for " + tokens[0]);
+                } else if (Integer.parseInt(tokens[2]) < 1
+                    || Integer.parseInt(tokens[2]) > options.length) {
+                    System.out.println(
+                        "Error! Correct answer choice number is out of range for "
+                        + tokens[0]);
                     return;
                 } else if (Integer.parseInt(tokens[2 + 1]) < 0) {
                     System.out.println("Invalid max marks for " + tokens[0]);
@@ -277,7 +279,8 @@ public final class Solution {
                     System.out.println("Invalid penalty for " + tokens[0]);
                     return;
                 } else {
-                    Question question = new Question(tokens[0], options, Integer.parseInt(tokens[2]),
+                    Question question = new Question(tokens[0],
+                        options, Integer.parseInt(tokens[2]),
                     Integer.parseInt(tokens[2 + 1]), Integer.parseInt(tokens[2 + 2]));
                     quiz.addQuestion(question);
                 }
