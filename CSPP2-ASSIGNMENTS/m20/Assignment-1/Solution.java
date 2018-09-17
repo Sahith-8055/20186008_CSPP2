@@ -264,12 +264,13 @@ public final class Solution {
                     System.out.println("Error! Malformed question");
                     return;
                 } else if (options.length < 2) {
-                    System.out.println(tokens[0] + " does not have enough answer choices");
+                    System.out.println(tokens[0]
+                        + " does not have enough answer choices");
                     return;
                 } else if (Integer.parseInt(tokens[2]) < 1
                     || Integer.parseInt(tokens[2]) > options.length) {
                     System.out.println(
-                        "Error! Correct answer choice number is out of range for "
+                    "Error! Correct answer choice number is out of range for "
                         + tokens[0]);
                     return;
                 } else if (Integer.parseInt(tokens[2 + 1]) < 0) {
@@ -281,7 +282,8 @@ public final class Solution {
                 } else {
                     Question question = new Question(tokens[0],
                         options, Integer.parseInt(tokens[2]),
-                    Integer.parseInt(tokens[2 + 1]), Integer.parseInt(tokens[2 + 2]));
+                    Integer.parseInt(tokens[2 + 1]),
+                    Integer.parseInt(tokens[2 + 2]));
                     quiz.addQuestion(question);
                 }
             }
