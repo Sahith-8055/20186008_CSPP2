@@ -179,13 +179,13 @@ class Quiz {
             Question question = getQuestion(i);
             System.out.println(question.getQuestionText());
             if (question.evaluateResponse(question.getResponse())) {
-                s += "Correct Answer! - Marks Awarded:" +
-                    Integer.toString(question.getMaxMarks());
+                s = " Correct Answer! - Marks Awarded:" + " "
+                    + Integer.toString(question.getMaxMarks());
                     System.out.println(s);
                     l += question.getMaxMarks();
             }
         }
-        System.out.println("Total Score:" + Integer.toString(l));
+        System.out.println("Total Score:" + " " + Integer.toString(l));
     }
 
 }
@@ -295,14 +295,14 @@ public final class Solution {
                 + question.getMaxMarks() + ")");
         int j = 0;
         for (j = 0; j < question.getChoice().length - 1; j++) {
-            System.out.println(question.getChoice()[j] + "\t");
+            System.out.print(question.getChoice()[j] + "\t");
         }
         System.out.println(question.getChoice()[j]);
         System.out.println();
         str = scan.nextLine();
         question.setResponse(str);
     }
-}
+    }
     /**
      * Displays the score report.
      *
