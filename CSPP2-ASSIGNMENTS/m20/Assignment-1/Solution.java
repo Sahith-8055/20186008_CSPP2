@@ -58,7 +58,7 @@ class Question {
      * @return     {Boolean value}
      */
     public boolean evaluateResponse(final String choice) {
-        return choice.equals(getResponse());
+        return choice.equals(getCorrectAnswer());
     }
     /**
      * Gets the correct answer.
@@ -172,10 +172,20 @@ class Quiz {
      *
      * @return     {String representation}
      */
-    public String showReport() {
+    public void showReport() {
         String s = "";
-
-        return s;
+        int l = 0;
+        for (int i = 0; i < size; i++) {
+            Question question = getQuestion(i);
+            System.out.println(question.getQuestionText());
+            if (question.evaluateResponse(question.getResponse())) {
+                s += "Correct Answer! - Marks Awarded:" +
+                    Integer.toString(question.getMaxMarks());
+                    System.out.println(s);
+                    l += question.getMaxMarks();
+            }
+        }
+        System.out.println("Total Score:" + Integer.toString(l));
     }
 
 }
@@ -254,7 +264,7 @@ public final class Solution {
                     System.out.println("Error! Malformed question");
                 } else if (options.length < 2) {
                     System.out.println(tokens[0] + "does not have enough answer choices");
-                } else if (Integer.parseInt(tokens[2]) < 1 && Integer.parseInt(tokens[2]) > options.length) {
+                } else if (Integer.parseInt(tokens[2]) < 1 || Integer.parseInt(tokens[2]) > options.length) {
                     System.out.println("Error! Correct answer choice number is out of range for " + tokens[0]);
                 } else if (Integer.parseInt(tokens[2 + 1]) < 0) {
                     System.out.println("Invalid max marks for " + tokens[0]);
@@ -278,9 +288,21 @@ public final class Solution {
         // write your code here to display the quiz questions on the console.
         // read the user responses from the console using scanner object.
         // store the user respone in the question object
-
-
+        String str = "";
+        for (int i = 0; i < q; i++) {
+            Question question = quiz.getQuestion(i);
+            System.out.println(question.getQuestionText() + "("
+                + question.getMaxMarks() + ")");
+        int j = 0;
+        for (j = 0; j < question.getChoice().length - 1; j++) {
+            System.out.println(question.getChoice()[j] + "\t");
+        }
+        System.out.println(question.getChoice()[j]);
+        System.out.println();
+        str = scan.nextLine();
+        question.setResponse(str);
     }
+}
     /**
      * Displays the score report.
      *
