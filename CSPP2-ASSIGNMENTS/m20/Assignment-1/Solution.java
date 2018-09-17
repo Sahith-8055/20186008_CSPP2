@@ -253,7 +253,8 @@ public final class Solution {
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
-        if (q > 0) {
+        if (q > 1) {
+            System.out.println(q + " " + "are added to the quiz");
             for (int i = 0; i < q; i++) {
                 String[] tokens = scan.nextLine().split(":");
                 String[] options = tokens[1].split(",");
