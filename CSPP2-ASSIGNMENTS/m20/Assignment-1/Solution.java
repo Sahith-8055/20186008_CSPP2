@@ -269,8 +269,6 @@ public final class Solution {
                     System.out.println("Invalid max marks for " + tokens[0]);
                 } else if (Integer.parseInt(tokens[2 + 2]) >= 0) {
                     System.out.println("Invalid penalty for " + tokens[0]);
-                } else if (q == 1) {
-                    System.out.println("Quiz does not have questions");
                 } else {
                     quiz.addQuestion(question);
                 }
