@@ -258,7 +258,7 @@ public final class Solution {
             for (int i = 0; i < q; i++) {
                 String[] tokens = scan.nextLine().split(":");
                 String[] options = tokens[1].split(",");
-                if (tokens.length != 2 + 2 + 1) {
+                if (tokens.length != 2 + 2 + 1 || tokens[0].length() <= 0) {
                     System.out.println("Error! Malformed question");
                 } else if (options.length < 2) {
                     System.out.println(tokens[0] + "does not have enough answer choices");
