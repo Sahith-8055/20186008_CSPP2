@@ -206,7 +206,7 @@ public final class Solution {
      */
     public static void main(final String[] args) {
          // instantiate this Quiz
-        Quiz q = null;
+        Quiz q = new Quiz();
          // code to read the test cases input file
         Scanner s = new Scanner(System.in);
         // check if there is one more line to process
@@ -249,7 +249,7 @@ public final class Solution {
      *
      */
     public static void loadQuestions(final Scanner scan,
-        Quiz quiz, final int q) {
+        final Quiz quiz, final int q) {
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
@@ -274,7 +274,6 @@ public final class Solution {
                     System.out.println("Invalid penalty for " + tokens[0]);
                     return;
                 } else {
-                    quiz = new Quiz();
                     Question question = new Question(tokens[0], options, Integer.parseInt(tokens[2]),
                     Integer.parseInt(tokens[2 + 1]), Integer.parseInt(tokens[2 + 2]));
                     quiz.addQuestion(question);
@@ -294,22 +293,22 @@ public final class Solution {
         // write your code here to display the quiz questions on the console.
         // read the user responses from the console using scanner object.
         // store the user respone in the question object
-        String str = "";
-        if (quiz != null) {
+        if (quiz.getQuestion(0) != null) {
+            String str = "";
             for (int i = 0; i < q; i++) {
-                    Question question = quiz.getQuestion(i);
-                    System.out.println(question.getQuestionText() + "("
-                        + question.getMaxMarks() + ")");
-                int j = 0;
-                for (j = 0; j < question.getChoice().length - 1; j++) {
-                    System.out.print(question.getChoice()[j] + "\t");
-                }
-                System.out.println(question.getChoice()[j]);
-                System.out.println();
-                str = scan.nextLine();
-                question.setResponse(str);
+                Question question = quiz.getQuestion(i);
+                System.out.println(question.getQuestionText() + "("
+                    + question.getMaxMarks() + ")");
+            int j = 0;
+            for (j = 0; j < question.getChoice().length - 1; j++) {
+                System.out.print(question.getChoice()[j] + "\t");
             }
+            System.out.println(question.getChoice()[j]);
+            System.out.println();
+            str = scan.nextLine();
+            question.setResponse(str);
         }
+    }
     }
     /**
      * Displays the score report.
