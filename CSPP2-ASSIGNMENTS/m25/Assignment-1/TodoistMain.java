@@ -130,7 +130,13 @@ class Task {
  * Class for todoist.
  */
 class Todoist {
-    Task[] tasks;
+    /**
+     * {List of tasks}.
+     */
+    private Task[] tasks;
+    /**
+     * {Size of the tasks list}.
+     */
     private int size;
 
     /**
@@ -224,7 +230,10 @@ class Todoist {
  * Class for todoist main.
  */
 public class TodoistMain {
-
+    /**
+     * Constructs the object.
+     */
+    TodoistMain() {}
     /**
      * Starts a test.
      */
@@ -302,17 +311,17 @@ public class TodoistMain {
             throw new Exception ("Title not provided");
         }
         String assignedTo = tokens[2];
-        int timeToComplete = Integer.parseInt(tokens[3]);
+        int timeToComplete = Integer.parseInt(tokens[2 + 1]);
         if (timeToComplete < 0) {
             throw new Exception ("Invalid timeToComplete" + " " + timeToComplete);
         }
-        boolean important = tokens[4].equals("y");
-        boolean urgent = tokens[5].equals("y");
-        String status = tokens[6];
+        boolean important = tokens[2 + 2].equals("y");
+        boolean urgent = tokens[2 + 2 + 1].equals("y");
+        String status = tokens[2 + 2 + 2];
         if (!(status.equals("todo") || status.equals("done"))) {
             throw new Exception ("Invalid status dud");
         }
-        return new Task (
+        return new Task(
                    title, assignedTo, timeToComplete,
                    important, urgent, status);
     }
