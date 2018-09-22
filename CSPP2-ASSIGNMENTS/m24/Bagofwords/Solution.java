@@ -83,7 +83,7 @@ class Plagiarism {
         for (int m = 1; m <= length; m++) {
             str += "File" + Integer.toString(m) + ".txt"
                    + "\t";
-            System.out.println(str);
+            System.out.print(str);
         }
         System.out.println();
         for (int[] x : bag) {
@@ -91,7 +91,7 @@ class Plagiarism {
                 String str1 = "";
                 str += "File" + Integer.toString(c1) + ".txt"
                        + "\t";
-                System.out.println(str1);
+                System.out.print(str1);
             }
             final int number = 100;
             long s = Math.round(
