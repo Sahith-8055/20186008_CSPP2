@@ -50,7 +50,7 @@ class CommonString {
 /**
  * Class for solution.
  */
-class Solution {
+public final class Solution {
     /**
      * Constructs the object.
      */
@@ -62,25 +62,26 @@ class Solution {
      *
      * @param      args  The arguments
      */
-    public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        File testcase = new File(input.nextLine());
+    public static void main(final String[] args) {
+        Scanner scan = new Scanner(System.in);
+        File testcase = new File(scan.nextLine());
         File[] testfiles = testcase.listFiles();
         if (testfiles.length == 0) {
-            System.out.println("empty directory");
+            System.out.println("Empty directory");
         } else {
             System.out.print("             ");
             for (File name : testfiles) {
-                System.out.print(name.toString().split("\\\\")[1] + "    ");
-
+                System.out.print(
+                    name.toString().split("\\\\")[1] + "    ");
             }
-
             ArrayList<String> fileStrings = new ArrayList<>();
             ArrayList<CommonString> objects = new ArrayList<>();
             for (File filename : testfiles) {
                 try {
-                    String content = new String(Files.readAllBytes(Paths.get(filename.getAbsolutePath())));
-                    content = content.replaceAll("\n", " ").replaceAll("[^A-Za-z0-9 ]", "").replaceAll("\\s+", " ");
+                    String content = new String(
+                        Files.readAllBytes(Paths.get(filename.getAbsolutePath())));
+                    content = content.replaceAll("\n", " ").replaceAll(
+                        "[^A-Za-z0-9 ]", "").replaceAll("\\s+", " ");
                     fileStrings.add(content);
                 } catch (Exception e) {
                     System.out.println("file not found");
