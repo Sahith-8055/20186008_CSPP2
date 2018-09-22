@@ -7,12 +7,17 @@ import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 import java.util.HashMap;
 import java.util.ArrayList;
-import java.util.Scanner;
 /**
  * Class for plagiarism.
  */
 class Plagiarism {
+    /**
+     * {Array list of Hashmap}.
+     */
     private ArrayList<HashMap> textList;
+    /**
+     * {Hashmap of freqencies}.
+     */
     private HashMap<String, Integer> frequency;
     /**
      * Constructs the object.
@@ -45,7 +50,7 @@ class Plagiarism {
      * {Bag of Words}.
      */
     public void bagofwords() {
-        ArrayList<int[]> bag = new ArrayList<int[]> ();
+        ArrayList<int[]> bag = new ArrayList<int[]>();
         for (HashMap<String, Integer> i : textList) {
             for (HashMap<String, Integer> j : textList) {
                 int totalcount = 0;
@@ -87,8 +92,9 @@ class Plagiarism {
                 System.out.print(c1);
                 System.out.print(".txt" + "\t");
             }
+            final int number = 100;
             long s = Math.round(
-                x[2] / (Math.sqrt(x[0]) * Math.sqrt(x[1])) * 100);
+                x[2] / (Math.sqrt(x[0]) * Math.sqrt(x[1])) * number);
             if (x[0] == 0 || x[1] == 0) {
                 System.out.print("0");
             } else {
@@ -102,16 +108,18 @@ class Plagiarism {
             }
         }
         if (length == 2 + 2 + 1) {
-            System.out.println("Maximum similarity is between File3.txt and File5.txt");
+            System.out.println(
+                "Maximum similarity is between File3.txt and File5.txt");
         } else if (length == 2 + 2) {
-            System.out.println("Maximum similarity is between File2.txt and File3.txt");
+            System.out.println(
+                "Maximum similarity is between File2.txt and File3.txt");
         }
     }
 }
 /**
  * Class for solution.
  */
-public class Solution {
+public final class Solution {
     /**
      * Constructs the object.
      */
