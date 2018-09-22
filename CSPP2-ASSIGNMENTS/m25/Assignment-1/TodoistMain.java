@@ -40,8 +40,14 @@ class Task {
 		}
 		return str;
 	}
-	public boolean getUrgency() {
-		return this.urgency;
+	public String getUrgency() {
+		String str = "";
+		if (this.urgency == true) {
+			str = "Urgent";
+		} else {
+			str = "Not Urgent";
+		}
+		return str;
 	}
 	public String getStatus() {
 		return this.status1;
@@ -51,6 +57,7 @@ class Task {
 		String str = "";
 		str += getTitle() + "," + " " + getName() + ",";
 		str += " " + getCompletionTime() + "," + " " + getImportance() + ",";
+		str += " " + getUrgency() + "," + " " + getStatus();
 		return str;
 	}
 }
