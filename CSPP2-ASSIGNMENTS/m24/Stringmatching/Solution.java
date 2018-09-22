@@ -33,14 +33,13 @@ class CommonString {
         file1 = str1;
         file2 = str2;
     }
-
     /**
      * {Method for finding the common substring}.
      *
      * @param      arr1  The arr 1
      * @param      arr2  The arr 2
-     * @param      m     { parameter_description }
-     * @param      n     { parameter_description }
+     * @param      m     {Variable m}
+     * @param      n     {Variable n}
      */
     public void common(final char[] arr1,
         final char[] arr2, final int m, final int n) {
