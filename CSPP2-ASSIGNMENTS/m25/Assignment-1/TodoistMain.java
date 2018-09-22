@@ -246,6 +246,9 @@ public class TodoistMain {
         boolean important = tokens[4].equals("y");
         boolean urgent = tokens[5].equals("y");
         String status = tokens[6];
+        if (!(status.equals("todo") || status.equals("done"))) {
+            throw new Exception ("Invalid status dud");
+        }
         return new Task(
             title, assignedTo, timeToComplete, important, urgent, status);
     }
