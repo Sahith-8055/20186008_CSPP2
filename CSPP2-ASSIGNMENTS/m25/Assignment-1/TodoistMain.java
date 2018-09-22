@@ -2,7 +2,7 @@ import java.util.Scanner;
 import java.util.Arrays;
 
 /**
-  * write your code below this comment
+  * @author Sahith.
   */
 
 /**
@@ -139,6 +139,13 @@ class Todoist {
     }
     public int totalTime4Completion() {
         return 0;
+    }
+    public String toString() {
+        String str = "";
+        for (int i = 0; i < size; i++) {
+            str += tasks[i].toString() + "\n";
+        }
+        return str;
     }
 }
 /**
