@@ -207,7 +207,7 @@ class Todoist {
     public int totalTime4Completion() {
         int total = 0;
         for (int i = 0; i < size; i++) {
-            if (tasks[i].getStatus() == "todo") {
+            if (tasks[i].getStatus().equals("todo")) {
                 total += tasks[i].getCompletionTime();
             }
         }
