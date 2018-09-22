@@ -44,6 +44,7 @@ class Task {
 	public String toString() {
 		String str = "";
 		str += getTitle() + "," + " " + getName() + ",";
+		str += " " + getCompletionTime() + "," + " " + getImportance() + ",";
 		return str;
 	}
 }
