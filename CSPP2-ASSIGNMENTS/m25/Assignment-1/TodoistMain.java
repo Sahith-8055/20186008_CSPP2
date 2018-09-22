@@ -9,11 +9,29 @@ import java.util.Arrays;
  * Class for task.
  */
 class Task {
+    /**
+     * {Title of the task}.
+     */
     private String taskTitle;
+    /**
+     * {Name of the task performer}.
+     */
     private String performerName;
+    /**
+     * {Time needed to complete the task}.
+     */
     private int completeTime;
+    /**
+     * {Importance of the task}.
+     */
     private boolean importance;
+    /**
+     * {Urgency of the task}.
+     */
     private boolean urgency;
+    /**
+     * {Status of the task}.
+     */
     private String status1;
     /**
      * Constructs the object.
@@ -66,7 +84,7 @@ class Task {
      */
     public String getImportance() {
         String str = "";
-        if (this.importance == true) {
+        if (this.importance) {
             str = "Important";
         } else {
             str = "Not Important";
@@ -80,7 +98,7 @@ class Task {
      */
     public String getUrgency() {
         String str = "";
-        if (this.urgency == true) {
+        if (this.urgency) {
             str = "Urgent";
         } else {
             str = "Not Urgent";
@@ -294,8 +312,9 @@ public class TodoistMain {
         if (!(status.equals("todo") || status.equals("done"))) {
             throw new Exception ("Invalid status dud");
         }
-        return new Task(
-                   title, assignedTo, timeToComplete, important, urgent, status);
+        return new Task (
+                   title, assignedTo, timeToComplete,
+                   important, urgent, status);
     }
 
     /**
