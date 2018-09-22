@@ -9,140 +9,137 @@ import java.util.Arrays;
  * Class for task.
  */
 class Task {
-	private String taskTitle;
-	private String performerName;
-	private int completeTime;
-	private boolean importance;
-	private boolean urgency;
-	private String status1;
-	/**
-	 * Constructs the object.
-	 */
-	Task() {}
-	/**
-	 * Constructs the object.
-	 *
-	 * @param      title           The title
-	 * @param      assignedTo      The assigned to
-	 * @param      timeToComplete  The time to complete
-	 * @param      important       The important
-	 * @param      urgent          The urgent
-	 * @param      status          The status
-	 */
-	Task(final String title, final String assignedTo,
-		final int timeToComplete, final boolean important,
-		final boolean urgent, final String status) throws Exception {
-		if (taskTitle == null) {
-			throw new Exception("Title not provided");
-		}
-		this.taskTitle = title;
-		this.performerName = assignedTo;
-		this.completeTime = timeToComplete;
-		this.importance = important;
-		this.urgency = urgent;
-		this.status1 = status;
-	}
-	/**
-	 * Gets the title.
-	 *
-	 * @return     The title.
-	 */
-	public String getTitle() {
-		return this.taskTitle;
-	}
-	/**
-	 * Gets the name.
-	 *
-	 * @return     The name.
-	 */
-	public String getName() {
-		return this.performerName;
-	}
-	/**
-	 * Gets the completion time.
-	 *
-	 * @return     The completion time.
-	 */
-	public int getCompletionTime() {
-		return this.completeTime;
-	}
-	/**
-	 * Gets the importance.
-	 *
-	 * @return     The importance.
-	 */
-	public String getImportance() {
-		String str = "";
-		if (this.importance == true) {
-			str = "Important";
-		} else {
-			str = "Not Important";
-		}
-		return str;
-	}
-	/**
-	 * Gets the urgency.
-	 *
-	 * @return     The urgency.
-	 */
-	public String getUrgency() {
-		String str = "";
-		if (this.urgency == true) {
-			str = "Urgent";
-		} else {
-			str = "Not Urgent";
-		}
-		return str;
-	}
-	/**
-	 * Gets the status.
-	 *
-	 * @return     The status.
-	 */
-	public String getStatus() {
-		return this.status1;
-	}
-	/**
-	 * Returns a string representation of the object.
-	 *
-	 * @return     String representation of the object.
-	 */
-	public String toString() {
-		String str = "";
-		str += getTitle() + "," + " " + getName() + ",";
-		str += " " + getCompletionTime() + "," + " " + getImportance() + ",";
-		str += " " + getUrgency() + "," + " " + getStatus();
-		return str;
-	}
+    private String taskTitle;
+    private String performerName;
+    private int completeTime;
+    private boolean importance;
+    private boolean urgency;
+    private String status1;
+    /**
+     * Constructs the object.
+     */
+    Task() {}
+    /**
+     * Constructs the object.
+     *
+     * @param      title           The title
+     * @param      assignedTo      The assigned to
+     * @param      timeToComplete  The time to complete
+     * @param      important       The important
+     * @param      urgent          The urgent
+     * @param      status          The status
+     */
+    Task(final String title, final String assignedTo,
+        final int timeToComplete, final boolean important,
+        final boolean urgent, final String status) {
+        this.taskTitle = title;
+        this.performerName = assignedTo;
+        this.completeTime = timeToComplete;
+        this.importance = important;
+        this.urgency = urgent;
+        this.status1 = status;
+    }
+    /**
+     * Gets the title.
+     *
+     * @return     The title.
+     */
+    public String getTitle() {
+        return this.taskTitle;
+    }
+    /**
+     * Gets the name.
+     *
+     * @return     The name.
+     */
+    public String getName() {
+        return this.performerName;
+    }
+    /**
+     * Gets the completion time.
+     *
+     * @return     The completion time.
+     */
+    public int getCompletionTime() {
+        return this.completeTime;
+    }
+    /**
+     * Gets the importance.
+     *
+     * @return     The importance.
+     */
+    public String getImportance() {
+        String str = "";
+        if (this.importance == true) {
+            str = "Important";
+        } else {
+            str = "Not Important";
+        }
+        return str;
+    }
+    /**
+     * Gets the urgency.
+     *
+     * @return     The urgency.
+     */
+    public String getUrgency() {
+        String str = "";
+        if (this.urgency == true) {
+            str = "Urgent";
+        } else {
+            str = "Not Urgent";
+        }
+        return str;
+    }
+    /**
+     * Gets the status.
+     *
+     * @return     The status.
+     */
+    public String getStatus() {
+        return this.status1;
+    }
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
+    public String toString() {
+        String str = "";
+        str += getTitle() + "," + " " + getName() + ",";
+        str += " " + getCompletionTime() + "," + " " + getImportance() + ",";
+        str += " " + getUrgency() + "," + " " + getStatus();
+        return str;
+    }
 }
 class Todoist {
-	Task[] tasks;
-	private int size;
-	Todoist() {
-		this.tasks = new Task[10];
-		this.size = 0;
-	}
-	public int getSize() {
-		return size;
-	}
-	private void resize() {
-		tasks = Arrays.copyOf(tasks, 2 * tasks.length);
-	}
-	public void addTask(final Task task) {
-		if (size == tasks.length) {
-			resize();
-		}
-		tasks[size++] = task;
-	}
-	public Task[] getNextTask(final String s) {
-		return tasks;
-	}
-	public Task[] getNextTask(final String s, final int k) {
-		return tasks;
-	}
-	public int totalTime4Completion() {
-		return 0;
-	}
+    Task[] tasks;
+    private int size;
+    Todoist() {
+        this.tasks = new Task[10];
+        this.size = 0;
+    }
+    public int getSize() {
+        return size;
+    }
+    private void resize() {
+        tasks = Arrays.copyOf(tasks, 2 * tasks.length);
+    }
+    public void addTask(final Task task) {
+        if (size == tasks.length) {
+            resize();
+        }
+        tasks[size++] = task;
+    }
+    public Task[] getNextTask(final String s) {
+        return tasks;
+    }
+    public Task[] getNextTask(final String s, final int k) {
+        return tasks;
+    }
+    public int totalTime4Completion() {
+        return 0;
+    }
 }
 /**
  * Class for todoist main.
