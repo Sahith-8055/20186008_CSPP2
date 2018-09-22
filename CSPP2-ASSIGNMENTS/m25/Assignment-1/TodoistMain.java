@@ -131,14 +131,23 @@ class Todoist {
         }
         tasks[size++] = task;
     }
-    public Task[] getNextTask(final String s) {
-        return tasks;
+    public Task getNextTask(final String s) {
+        Task task1 = new Task();
+        // for (int i = 0; i < size; i++) {
+        // }
+        return task1;
     }
     public Task[] getNextTask(final String s, final int k) {
         return tasks;
     }
     public int totalTime4Completion() {
-        return 0;
+        int total = 0;
+        for (int i = 0; i < size; i++) {
+            if (tasks[i].getStatus() == "todo") {
+                total += tasks[i].getCompletionTime();
+            }
+        }
+        return total;
     }
     public String toString() {
         String str = "";
