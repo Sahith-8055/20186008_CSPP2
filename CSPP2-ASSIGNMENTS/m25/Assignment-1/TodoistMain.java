@@ -4,6 +4,10 @@ import java.util.Arrays;
 /**
   * write your code below this comment
   */
+
+/**
+ * Class for task.
+ */
 class Task {
 	private String taskTitle;
 	private String performerName;
@@ -11,10 +15,26 @@ class Task {
 	private boolean importance;
 	private boolean urgency;
 	private String status1;
+	/**
+	 * Constructs the object.
+	 */
 	Task() {}
+	/**
+	 * Constructs the object.
+	 *
+	 * @param      title           The title
+	 * @param      assignedTo      The assigned to
+	 * @param      timeToComplete  The time to complete
+	 * @param      important       The important
+	 * @param      urgent          The urgent
+	 * @param      status          The status
+	 */
 	Task(final String title, final String assignedTo,
 		final int timeToComplete, final boolean important,
-		final boolean urgent, final String status) {
+		final boolean urgent, final String status) throws Exception {
+		if (taskTitle == null) {
+			throw new Exception("Title not provided");
+		}
 		this.taskTitle = title;
 		this.performerName = assignedTo;
 		this.completeTime = timeToComplete;
@@ -22,15 +42,35 @@ class Task {
 		this.urgency = urgent;
 		this.status1 = status;
 	}
+	/**
+	 * Gets the title.
+	 *
+	 * @return     The title.
+	 */
 	public String getTitle() {
 		return this.taskTitle;
 	}
+	/**
+	 * Gets the name.
+	 *
+	 * @return     The name.
+	 */
 	public String getName() {
 		return this.performerName;
 	}
+	/**
+	 * Gets the completion time.
+	 *
+	 * @return     The completion time.
+	 */
 	public int getCompletionTime() {
 		return this.completeTime;
 	}
+	/**
+	 * Gets the importance.
+	 *
+	 * @return     The importance.
+	 */
 	public String getImportance() {
 		String str = "";
 		if (this.importance == true) {
@@ -40,6 +80,11 @@ class Task {
 		}
 		return str;
 	}
+	/**
+	 * Gets the urgency.
+	 *
+	 * @return     The urgency.
+	 */
 	public String getUrgency() {
 		String str = "";
 		if (this.urgency == true) {
@@ -49,10 +94,19 @@ class Task {
 		}
 		return str;
 	}
+	/**
+	 * Gets the status.
+	 *
+	 * @return     The status.
+	 */
 	public String getStatus() {
 		return this.status1;
 	}
-
+	/**
+	 * Returns a string representation of the object.
+	 *
+	 * @return     String representation of the object.
+	 */
 	public String toString() {
 		String str = "";
 		str += getTitle() + "," + " " + getName() + ",";
@@ -74,7 +128,7 @@ class Todoist {
 	private void resize() {
 		tasks = Arrays.copyOf(tasks, 2 * tasks.length);
 	}
-	public void addTask(Task task) {
+	public void addTask(final Task task) {
 		if (size == tasks.length) {
 			resize();
 		}
