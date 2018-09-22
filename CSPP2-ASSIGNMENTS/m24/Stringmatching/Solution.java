@@ -7,10 +7,22 @@ import java.nio.file.Paths;
  * Class for common string.
  */
 class CommonString {
+    /**
+     * {String file1}.
+     */
     private String file1;
+    /**
+     * {String file2}.
+     */
     private String file2;
+    /**
+     * {Double result}.
+     */
     private Double result;
-    private Double res;
+    /**
+     * {Double result1}.
+     */
+    private Double result1;
     /**
      * Constructs the object.
      *
@@ -25,8 +37,8 @@ class CommonString {
     /**
      * {Method for finding the common substring}.
      *
-     * @param      arr1     { parameter_description }
-     * @param      arr2     { parameter_description }
+     * @param      arr1  The arr 1
+     * @param      arr2  The arr 2
      * @param      m     { parameter_description }
      * @param      n     { parameter_description }
      */
@@ -41,20 +53,26 @@ class CommonString {
                 } else if (arr1[i - 1] == arr2[j - 1]) {
                     longest[i][j] = longest[i - 1][j - 1] + 1;
                     result = Double.max(result, longest[i][j]);
-                } else
+                } else {
                     longest[i][j] = 0.0;
+                }
             }
         }
-        res = (double)Math.round((((result * 2) / (m + n)) * 100d));
+        result1 = (double) Math.round((((result * 2) / (m + n)) * 100d));
     }
+    /**
+     * Gets the result.
+     *
+     * @return     The result.
+     */
     public Double getResult() {
-        return res;
+        return result1;
     }
 }
 /**
  * Class for solution.
  */
-class Solution {
+public final class Solution {
     /**
      * Constructs the object.
      */
@@ -62,7 +80,7 @@ class Solution {
         //Empty.
     }
     /**
-     * {Main method}
+     * {Main method}.
      *
      * @param      args  The arguments
      */
@@ -97,13 +115,13 @@ class Solution {
                 for (String input2 : fileStrings) {
                     objects.add(new CommonString(input1, input2));
                     objects.get(k).common(input1.toCharArray(),
-                     input2.toCharArray(),input1.length(), input2.length());
+                     input2.toCharArray(), input1.length(), input2.length());
                     System.out.print(objects.get(k).getResult() + "         ");
                     k++;
                 }
                 i++;
             }
-        } catch(Exception e){
+        } catch (Exception e) {
             System.out.println("Empty Directory");
         }
     }
