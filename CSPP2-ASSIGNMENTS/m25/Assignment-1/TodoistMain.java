@@ -179,7 +179,7 @@ class Todoist {
     /**
      * Gets the next task.
      *
-     * @param      name  The name
+     * @param      name  The name of the person
      *
      * @return     The next task.
      */
@@ -190,8 +190,8 @@ class Todoist {
     /**
      * Gets the next task.
      *
-     * @param      s     { parameter_description }
-     * @param      k     { parameter_description }
+     * @param      s     {Name of the person}
+     * @param      k     {Number of tasks}
      *
      * @return     The next task.
      */
@@ -339,3 +339,4 @@ public final class TodoistMain {
         startTest();
     }
 }
+
