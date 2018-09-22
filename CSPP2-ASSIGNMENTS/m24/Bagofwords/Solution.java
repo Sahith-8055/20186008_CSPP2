@@ -45,7 +45,6 @@ class Plagiarism {
         }
         textList.add(frequency);
     }
-
     /**
      * {Bag of Words}.
      */
