@@ -143,7 +143,6 @@ class Todoist {
     public int totalTime4Completion() {
         int total = 0;
         for (int i = 0; i < size; i++) {
-            System.out.println("Hello");
             if (tasks[i].getStatus() == "todo") {
                 total += tasks[i].getCompletionTime();
             }
@@ -236,11 +235,20 @@ public class TodoistMain {
      */
     public static Task createTask(final String[] tokens) throws Exception {
         String title = tokens[1];
+        if (title.length() == 0) {
+            throw new Exception ("Title not provided");
+        }
         String assignedTo = tokens[2];
         int timeToComplete = Integer.parseInt(tokens[3]);
+        if (timeToComplete < 0) {
+            throw new Exception ("Invalid timeToComplete" + timeToComplete);
+        }
         boolean important = tokens[4].equals("y");
         boolean urgent = tokens[5].equals("y");
         String status = tokens[6];
+        if (!(status.equals("todo")) || status.equals("done")) {
+            throw new Exception ("Invalid Status" + status);
+        }
         return new Task(
             title, assignedTo, timeToComplete, important, urgent, status);
     }
