@@ -1,7 +1,5 @@
 import java.util.*;
-import java.lang.*;
 import java.io.*;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 /**
@@ -15,15 +13,20 @@ class CommonString {
     /**
      * Constructs the object.
      *
-     * @param      input1  The input 1
-     * @param      input2  The input 2
+     * @param      str1  The 1st String
+     * @param      str2  The 2nd String
      */
-    CommonString(String input1, String input2) {
-        this.file1 = input1;
-        this.file2 = input2;
+    CommonString(final String str1, final String str2) {
+        this.file1 = str1;
+        this.file2 = str2;
     }
     /**
-     * {Method to find the longest common substring}.
+     * {Method to find the longest common substring}
+     *
+     * @param      arr1  The arr 1
+     * @param      arr2  The arr 2
+     * @param      m     {variable m}
+     * @param      n     {variable n}
      */
     public void common(final char[] arr1, final char[] arr2,
         final int m, final int n) {
@@ -43,7 +46,7 @@ class CommonString {
         }
         res = (double)Math.round((((result * 2) / (m + n)) * 100d));
     }
-    public Double getresult() {
+    public Double getResult() {
         return res;
     }
 }
@@ -94,8 +97,9 @@ public final class Solution {
                 System.out.print("File" + i + ".txt" + "        ");
                 for (String input2 : fileStrings) {
                     objects.add(new CommonString(input1, input2));
-                    objects.get(k).common(input1.toCharArray(), input2.toCharArray(), input1.length(), input2.length());
-                    System.out.print(objects.get(k).getresult() + "         ");
+                    objects.get(k).common(
+                        input1.toCharArray(), input2.toCharArray(), input1.length(), input2.length());
+                    System.out.print(objects.get(k).getResult() + "         ");
                     k++;
                 }
                 i++;
