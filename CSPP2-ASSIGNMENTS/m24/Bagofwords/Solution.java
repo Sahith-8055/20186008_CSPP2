@@ -79,23 +79,22 @@ class Plagiarism {
         int c1 = 1;
         int c2 = 1;
         System.out.print("      " + "\t\t");
-        String str = "";
         for (int m = 1; m <= length; m++) {
-            str += "File" + Integer.toString(m) + ".txt"
-                   + "\t";
-            System.out.print(str);
+            System.out.print("File");
+            System.out.print(m);
+            System.out.print(".txt");
+            System.out.print("\t");
         }
         System.out.println();
         for (int[] x : bag) {
             if ((c0 % length) == 0) {
-                String str1 = "";
-                str1 += "File" + Integer.toString(c1) + ".txt"
-                       + "\t";
-                System.out.print(str1);
+                System.out.print("File");
+                System.out.print(c1);
+                System.out.print(".txt" + "\t");
             }
             final int number = 100;
             long s = Math.round(
-                         x[2] / (Math.sqrt(x[0]) * Math.sqrt(x[1])) * number);
+                x[2] / (Math.sqrt(x[0]) * Math.sqrt(x[1])) * number);
             if (x[0] == 0 || x[1] == 0) {
                 System.out.print("0");
             } else {
