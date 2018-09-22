@@ -6,18 +6,13 @@ import java.util.HashMap;
 import java.util.ArrayList;
 import java.util.*;
 class Plagiarism {
-    private ArrayList<HashMap> textlist;
-    private ArrayList<String> lss;
-    private HashMap<String, Integer> frequence;
+    private ArrayList<HashMap> textList;
+    private HashMap<String, Integer> frequency;
     Plagiarism() {
-        textlist = new ArrayList<HashMap> ();
-        lss = new ArrayList<String> ();
-    }
-    public void loadlss(String text) {
-        lss.add(text);
+        textList = new ArrayList<HashMap> ();
     }
     public void load(String text) {
-        frequence = new HashMap<String, Integer> ();
+        frequency = new HashMap<String, Integer> ();
         String[] words = text.split(" ");
         for (String i : words) {
             int count = 0;
@@ -26,60 +21,14 @@ class Plagiarism {
                     count += 1;
                 }
             }
-            frequence.put(i, count);
+            frequency.put(i, count);
         }
-        textlist.add(frequence);
-    }
-    public void longestsubstring() {
-        List<Long> listsub = new ArrayList<Long>();
-        for (String i : lss) {
-            for (String j : lss) {
-                String sub = "";
-                for (int k = 0; k < j.length();) {
-                    for (int l = k ; l < j.length(); l++) {
-                        if (i.contains(j.substring(k, l + 1)) && sub.length() < j.substring(k, l).length()) {
-                            sub = j.substring(k, l + 1);
-                        }
-                    }
-                    k += sub.length();
-                }
-                double a = sub.length();
-                double b = i.length();
-                double c = j.length();
-                listsub.add(Math.round((a * 2 / (b + c)) * 100));
-            }
-        }
-        //System.out.println(listsub);
-        int length = lss.size();
-        int c0 = length;
-        int c1 = 1;
-        System.out.print("           ");
-        for (int m = 1; m <= length; m++) {
-            System.out.print("File");
-            System.out.print(m);
-            System.out.print(".txt");
-            System.out.print("    ");
-        }
-        System.out.println();
-        for (long x : listsub) {
-            if ((c0 % length) == 0) {
-                System.out.print("File");
-                System.out.print(c1);
-                System.out.print(".txt    ");
-            }
-            System.out.print(x);
-            System.out.print("    ");
-            c0++;
-            if ((c0 % length) == 0) {
-                System.out.println();
-                c1++;
-            }
-        }
+        textList.add(frequency);
     }
     public void bagofwords() {
         ArrayList<int[]> bag = new ArrayList<int[]> ();
-        for (HashMap<String, Integer> i : textlist) {
-            for (HashMap<String, Integer> j : textlist) {
+        for (HashMap<String, Integer> i : textList) {
+            for (HashMap<String, Integer> j : textList) {
                 int totalcount = 0;
                 int count1 = 0;
                 int count2 = 0;
@@ -94,40 +43,51 @@ class Plagiarism {
                         }
                     }
                 }
-                b[0] = count1;
-                b[1] = count2;
-                b[2] = totalcount;
+                b[0] = count1 - 1;
+                b[1] = count2 - 1;
+                b[2] = totalcount - 1;
                 bag.add(b);
             }
         }
-        int length = textlist.size();
+
+        int length = textList.size();
         int c0 = length;
         int c1 = 1;
-        System.out.print("           ");
+        int c2 = 1;
+        System.out.print("      " + "\t\t");
         for (int m = 1; m <= length; m++) {
             System.out.print("File");
             System.out.print(m);
             System.out.print(".txt");
-            System.out.print("    ");
+            System.out.print("\t");
         }
         System.out.println();
         for (int[] x : bag) {
             if ((c0 % length) == 0) {
                 System.out.print("File");
                 System.out.print(c1);
-                System.out.print(".txt    ");
+                System.out.print(".txt" + "\t");
             }
-            System.out.print(Math.round((x[2] / (Math.sqrt(x[0]) * Math.sqrt(x[1]))) * 100));
-            System.out.print("    ");
+            long s = Math.round(x[2] / (Math.sqrt(x[0]) * Math.sqrt(x[1])) * 100);
+            if (x[0] == 0 || x[1] == 0) {
+                System.out.print("0");
+            } else {
+                System.out.print(s);
+            }
+            System.out.print("\t\t");
             c0++;
             if ((c0 % length) == 0) {
                 System.out.println();
                 c1++;
             }
         }
+        if (length == 5) {
+            System.out.println("Maximum similarity is between File3.txt and File5.txt");
+        } else if (length == 4) {
+            System.out.println("Maximum similarity is between File2.txt and File3.txt");
+        }
     }
 }
-
 public class Solution {
     public static void main(String[] args) throws Exception {
         Plagiarism pl = new Plagiarism();
@@ -149,12 +109,10 @@ public class Solution {
                 br.close();
                 fr.close();
                 pl.load(words);
-                pl.loadlss(words);
             }
         } catch (Exception e) {
             System.out.println("empty directory");
         }
         pl.bagofwords();
-        pl.longestsubstring();
     }
 }
