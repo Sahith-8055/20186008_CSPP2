@@ -1,6 +1,6 @@
-import java.util.*;
-import java.lang.*;
-import java.io.*;
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 /**
@@ -44,6 +44,7 @@ class CommonString {
      */
     public void common(final char[] arr1,
         final char[] arr2, final int m, final int n) {
+        final double x = 100.0;
         Double[][] longest = new Double[m + 1][n + 1];
         result = 0.0;
         for (int i = 0; i <= m; i++) {
@@ -58,7 +59,7 @@ class CommonString {
                 }
             }
         }
-        result1 = (double) Math.round((((result * 2) / (m + n)) * 100d));
+        result1 = (double) Math.round((((result * 2) / (m + n)) * x));
     }
     /**
      * Gets the result.
