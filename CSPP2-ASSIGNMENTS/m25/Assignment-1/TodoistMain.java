@@ -31,8 +31,14 @@ class Task {
 	public int getCompletionTime() {
 		return this.completeTime;
 	}
-	public boolean getImportance() {
-		return this.importance;
+	public String getImportance() {
+		String str = "";
+		if (this.importance == true) {
+			str = "Important";
+		} else {
+			str = "Not Important";
+		}
+		return str;
 	}
 	public boolean getUrgency() {
 		return this.urgency;
