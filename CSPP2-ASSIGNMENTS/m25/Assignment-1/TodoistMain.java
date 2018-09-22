@@ -143,7 +143,8 @@ class Todoist {
      * Constructs the object.
      */
     Todoist() {
-        this.tasks = new Task[10];
+        final int x =10;
+        this.tasks = new Task[x];
         this.size = 0;
     }
 
@@ -233,7 +234,9 @@ public class TodoistMain {
     /**
      * Constructs the object.
      */
-    TodoistMain() {}
+    private TodoistMain() {
+        //Empty.
+    }
     /**
      * Starts a test.
      */
