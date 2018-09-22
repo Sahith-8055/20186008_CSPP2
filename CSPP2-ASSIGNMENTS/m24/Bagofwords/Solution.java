@@ -89,7 +89,7 @@ class Plagiarism {
         for (int[] x : bag) {
             if ((c0 % length) == 0) {
                 String str1 = "";
-                str += "File" + Integer.toString(c1) + ".txt"
+                str1 += "File" + Integer.toString(c1) + ".txt"
                        + "\t";
                 System.out.print(str1);
             }
